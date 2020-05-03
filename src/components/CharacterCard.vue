@@ -18,8 +18,7 @@
         size="125"
         tile
       >
-        <!-- <v-img :src="character.picture" /> -->
-        <v-img src="@/assets/Kisha.png" />
+        <v-img :src="require(`../assets/${character.picture}`)" />
       </v-avatar>
     </div>
     <v-card-actions>

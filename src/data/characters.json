@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Kisha",
+    "health": 3,
+    "defense": 3,
+    "abilityName": "Lucky Shot",
+    "abilityDescription": "+1 Reroll for every equipped non-Magic Ranged attack card.",
+    "picture": "Kisha.png"
+  },
+  {
+    "name": "Jaimie",
+    "health": 3,
+    "defense": 3,
+    "abilityName": "Shield Bash",
+    "abilityDescription": "May exhaust her Hero card to Move a Close Character up to 2 spaces away (this Move doesn't trigger Guard Reaction).",
+    "picture": "Jaimie.png"
+  },
+  {
+    "name": "Diana",
+    "health": 4,
+    "defense": 2,
+    "abilityName": "Volley",
+    "abilityDescription": "When attacking a Clost Enemy with a Bow or Thrown Weapon, may target one extra Close enemy per crit rolled.",
+    "picture": "Diana.png"
+  },
+  {
+    "name": "Cassius",
+    "health": 4,
+    "defense": 1,
+    "abilityName": "Foe on a Stick",
+    "abilityDescription": "When attacking with a Lance or Exotic attack card, the target does not roll Defense dice.",
+    "picture": "Cassius.png"
+  },
+  {
+    "name": "Mark",
+    "health": 4,
+    "defense": 1,
+    "abilityName": "Brothers in Arms",
+    "abilityDescription": "When attacking, does not exhaust a non-Magic Melee attack card while Close to an Ally.",
+    "picture": "Mark.png"
+  },
+  {
+    "name": "Phyx",
+    "health": 4,
+    "defense": 1,
+    "abilityName": "Secret of the Blade",
+    "abilityDescription": "When attacking with a Sword attack card, each crit deals one additional Hit.",
+    "picture": "Phyx.png"
+  },
+  {
+    "name": "Jack-Jack",
+    "health": 3,
+    "defense": 3,
+    "abilityName": "Trolling",
+    "abilityDescription": "If his attack rolls any Hits, you may switch one of the target's Upgrade cards with another from their Guild (before rolling Defense).",
+    "picture": "Jack-Jack.png"
+  },
+  {
+    "name": "Bjor of Oros",
+    "health": 7,
+    "defense": 0,
+    "abilityName": "Hard as a Rock",
+    "abilityDescription": "Stop it it tickles.",
+    "picture": "Bjor Doros.png"
+  },
+  {
+    "name": "Izzy",
+    "health": 4,
+    "defense": 2,
+    "abilityName": "Monster Brew",
+    "abilityDescription": "When he kills a Monster, place its figure on Hero card. He may use it like a Healing or Refreshing Potion (returning it to the box).",
+    "picture": "Izzy.png"
+  },
+  {
+    "name": "Sybbyl",
+    "health": 4,
+    "defense": 2,
+    "abilityName": "Dark Magic",
+    "abilityDescription": "When using a Magic attack, she may take 1 Death Curse to roll +1 die (keep the Death Curse card with the highest value).",
+    "picture": "Sybbyl.png"
+  },
+  {
+    "name": "Natasha",
+    "health": 4,
+    "defense": 2,
+    "abilityName": "Merciless",
+    "abilityDescription": "When attacking a flanked target (a target with a least one different Enemy Close to it) the attack deals 1 extra Wound.",
+    "picture": "Natasha.png"
+  },
+  {
+    "name": "Trandir",
+    "health": 4,
+    "defense": 2,
+    "abilityName": "Collateral Magic",
+    "abilityDescription": "When using a Magic attack, may exhaust his Hero card to target an additional Enemy Close to the target.",
+    "picture": "Trandir.png"
+  }
+]

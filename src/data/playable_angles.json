@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Benjamin",
+    "health": 4,
+    "defense": 3,
+    "abilityName": "Inspiration",
+    "abilityDescription": "Any allied Hero in Line of Sight of Benjamin gets +1 die to all rolls.",
+    "picture": ""
+  },
+  {
+    "name": "Leah",
+    "health": 6,
+    "defense": 1,
+    "abilityName": "Commander",
+    "abilityDescription": "At any point during her activation, Close Allies may Move 1 Space. (This Move doesn't trigger Guard Reaction. Maximum 1 Move per Ally per turn.)",
+    "picture": ""
+  },
+  {
+    "name": "Angel Eyes",
+    "health": 4,
+    "defense": 3,
+    "abilityName": "Celestial Song",
+    "abilityDescription": "For each crit she rolls on an attack, you may unexhaust one card from an ally.",
+    "picture": ""
+  },
+  {
+    "name": "The Wanderer",
+    "health": 5,
+    "defense": 2,
+    "abilityName": "Healing Hands",
+    "abilityDescription": "For each Wound he deals, you may heal one Wound from an Ally.",
+    "picture": ""
+  },
+  {
+    "name": "Justicar",
+    "health": 5,
+    "defense": 2,
+    "abilityName": "Redeemer",
+    "abilityDescription": "For each Wound he deals, you may remove 2 Death Token or 1 Damnation from an Ally.",
+    "picture": ""
+  }
+]

@@ -15,17 +15,27 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-banner sticky>
-      Selected characters:
-      <span
+    <v-banner
+      v-if="selectedCharacters.length"
+      sticky
+    >
+      <v-chip
         v-for="(character, i) in selectedCharacters"
         :key="i"
+        class="ma-2"
       >
+        <v-avatar>
+          <v-img :src="require(`../assets/${character.picture}`)" />
+        </v-avatar>
         {{ character.name }}
-      </span>
+      </v-chip>
       <template v-slot:actions>
-        <v-btn text color="primary" @click="clearCharacterSelection">Clear</v-btn>
-        <v-btn text color="primary">Continue</v-btn>
+        <v-btn
+          text
+          color="primary"
+        >
+          Continue
+        </v-btn>
       </template>
     </v-banner>
   </div>
@@ -60,10 +70,6 @@ export default class SelectCharcter extends Vue {
       this.selectedCharacters.splice(characterIndex, 1);
     }
   }
-
-  clearCharacterSelection() {
-    this.selectedCharacters = [];
-  }
 }
 </script>
 
@@ -76,5 +82,21 @@ export default class SelectCharcter extends Vue {
   .v-card__subtitle {
     text-align: left;
   }
+}
+
+.v-banner--sticky {
+  top: unset !important;
+  bottom: 0;
+}
+
+.v-banner__content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.v-chip {
+  margin-left: .5em;
+  margin-right: .2em;
 }
 </style>

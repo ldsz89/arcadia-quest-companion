@@ -30,5 +30,13 @@
     "abilityName": "Healing Hands",
     "abilityDescription": "For each Wound he deals, you may heal one Wound from an Ally.",
     "picture": ""
+  },
+  {
+    "name": "Justicar",
+    "health": 5,
+    "defense": 2,
+    "abilityName": "Redeemer",
+    "abilityDescription": "For each Wound he deals, you may remove 2 Death Token or 1 Damnation from an Ally.",
+    "picture": ""
   }
 ]

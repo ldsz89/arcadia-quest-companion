@@ -24,9 +24,6 @@
         <v-img :src="require(`../assets/${character.picture}`)" />
       </v-avatar>
     </div>
-    <v-card-actions>
-      <v-btn>Select</v-btn>
-    </v-card-actions>
   </v-card>
 </template>
 

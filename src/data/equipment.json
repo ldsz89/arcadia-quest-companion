@@ -1,0 +1,46 @@
+{
+  "starters": [
+    {
+      "name": "Dusty Blade",
+      "type": "Melee Attack",
+      "strength": 3,
+      "item": "Sword"
+    },
+    {
+      "name": "Vile Trident",
+      "type": "Melee Attack",
+      "strength": 2,
+      "item": "Lance",
+      "description": "For any attack this Hero makes, he may take 1 Damnation to roll +1 die."
+    },
+    {
+      "name": "Short Bow",
+      "type": "Ranged Attack",
+      "strength": 2,
+      "item": "Bow"
+    },
+    {
+      "name": "Grimbolt",
+      "type": "Ranged Attack",
+      "strength": 2,
+      "item": "Magic",
+      "description": "If this deals any Wounds, this Hero may take 2 Damnation to deal 1 additional Wound."
+    },
+    {
+      "name": "Lifebound",
+      "type": "Ranged Attack",
+      "strength": 2,
+      "item": "Magic",
+      "description": "Each Hit heals 1 Wound from this Hero or from one Ally Close to the target."
+    }
+  ],
+  "level-1": [
+    {
+      "name": "",
+      "type": "",
+      "strength": 1,
+      "item": "",
+      "description": ""
+    }
+  ]
+}

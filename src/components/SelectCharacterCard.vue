@@ -1,5 +1,8 @@
 <template>
-  <v-card>
+  <v-card
+    :class="{selected: selected}"
+    @click="toggleCharacter(character)"
+  >
     <div class="card">
       <div>
         <v-card-title
@@ -37,8 +40,29 @@ interface Character {
 }
 
 @Component
-export default class CharacterCard extends Vue {
+export default class SelectCharacterCard extends Vue {
   @Prop() character!: Character;
+  @Prop() select: any;
+  @Prop() deselect: any;
+
+  selected = false;
+
+  toggleCharacter(character: Character) {
+    if (this.selected) {
+      this.deselectCharacter(character);
+    } else {
+      this.selectCharacter(character);
+    }
+  }
+
+  selectCharacter(character: Character) {
+    this.selected = this.select(character);
+  }
+
+  deselectCharacter(character: Character) {
+    this.deselect(character);
+    this.selected = false;
+  }
 }
 </script>
 

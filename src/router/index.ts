@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 import Home from '../views/Home.vue';
 import SelectCharacter from '@/views/SelectCharacter.vue';
+import SelectInventory from '@/views/SelectInventory.vue';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/select-character',
     name: 'Select Character',
     component: SelectCharacter,
+  },
+  {
+    path: '/select-inventory',
+    name: 'Select Inventory',
+    component: SelectInventory,
   },
   {
     path: '/about',

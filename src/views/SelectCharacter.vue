@@ -7,7 +7,7 @@
           :key="'select-' + i"
           cols="12"
         >
-          <character-card
+          <select-character-card
             :character="character"
             :select="selectCharacter"
             :deselect="deselectCharacter"
@@ -33,6 +33,7 @@
         <v-btn
           text
           color="primary"
+          @click="advance()"
         >
           Continue
         </v-btn>
@@ -43,13 +44,14 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import CharacterCard from '@/components/CharacterCard.vue';
+import SelectCharacterCard from '@/components/SelectCharacterCard.vue';
 import characters from '@/data/characters.json';
 import {Character} from '../types';
+import Cookie from 'js-cookie';
 
 @Component({
   components: {
-    CharacterCard,
+    SelectCharacterCard,
   },
 })
 export default class SelectCharcter extends Vue {
@@ -68,6 +70,13 @@ export default class SelectCharcter extends Vue {
     const characterIndex = this.selectedCharacters.indexOf(character);
     if (characterIndex !== -1) {
       this.selectedCharacters.splice(characterIndex, 1);
+    }
+  }
+
+  advance() {
+    if (this.selectedCharacters.length === 3) {
+      Cookie.set('characters', JSON.stringify(this.selectedCharacters));
+      this.$router.push('select-inventory');
     }
   }
 }

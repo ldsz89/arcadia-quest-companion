@@ -1,5 +1,5 @@
 {
-  "starters": [
+  "starter": [
     {
       "name": "Dusty Blade",
       "type": "Melee Attack",
@@ -35,6 +35,51 @@
     }
   ],
   "level-1": [
+    {
+      "name": "",
+      "type": "",
+      "strength": 1,
+      "item": "",
+      "description": ""
+    }
+  ],
+  "level-2": [
+    {
+      "name": "",
+      "type": "",
+      "strength": 1,
+      "item": "",
+      "description": ""
+    }
+  ],
+  "level-3": [
+    {
+      "name": "",
+      "type": "",
+      "strength": 1,
+      "item": "",
+      "description": ""
+    }
+  ],
+  "level-4": [
+    {
+      "name": "",
+      "type": "",
+      "strength": 1,
+      "item": "",
+      "description": ""
+    }
+  ],
+  "level-5": [
+    {
+      "name": "",
+      "type": "",
+      "strength": 1,
+      "item": "",
+      "description": ""
+    }
+  ],
+  "level-6": [
     {
       "name": "",
       "type": "",

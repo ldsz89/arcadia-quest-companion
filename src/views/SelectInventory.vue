@@ -5,10 +5,13 @@
         {{ guild.name }}
       </h1>
       <v-select
-        v-model="selectedEquipmentOptions"
-        :items="equipmentOptions"
+        v-model="selectedEquipmentSources"
+        :items="equipmentSource"
         label="Equipment options"
+        item-text="label"
+        item-value="value"
         multiple
+        @change="setEquipment()"
       />
       <v-row>
         <v-col
@@ -23,39 +26,16 @@
             <character-card
               :character="guildMember.character"
             />
-            <!-- <v-menu>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  color="primary"
-                  dark
-                  v-on="on"
-                  block
-                >
-                  Add equipment
-                </v-btn>
-              </template>
-              <v-list>
-                <v-list-item
-                  v-for="(equipment, index) in starterEquipment"
-                  :key="index"
-                  @click="addEquipment(guildMember, equipment)"
-                >
-                  <v-list-item-title>{{ equipment.name }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu> -->
-            <v-list dense>
-              <v-list-item
-                v-for="(equipment, j) in guildMember.equipment"
-                :key="guildMember.character.name + '-equipment-' + j"
-                @click="removeEquipment(guildMember, equipment)"
-              >
-                <v-list-item-title class="text-left">
-                  {{ equipment.name }}
-                </v-list-item-title>
-                <v-list-item-subtitle>{{ equipment.description }}</v-list-item-subtitle>
-              </v-list-item>
-            </v-list>
+            <v-select
+              v-for="j in 4"
+              :key="guildMember.character.name + '-equipment-' + j"
+              v-model="guildMember.equipment[j-1]"
+              :items="equipment"
+              item-text="name"
+              item-value="name"
+              background-color="#C4C3A7"
+              color="#C4C3A7"
+            />
           </div>
         </v-col>
       </v-row>
@@ -70,7 +50,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import Cookie from 'js-cookie';
 import {Equipment, Guild, GuildMember} from '@/types';
-import equipment from '@/data/equipment.json';
+import equipmentData from '@/data/equipment.json';
 import CharacterCard from '@/components/CharacterCard.vue';
 import BottomBanner from '@/components/BottomBanner.vue';
 
@@ -85,9 +65,39 @@ export default class SelectInventory extends Vue {
     name: '',
     guildMembers: [],
   };
-  equipmentOptions = ['Starter', 'Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5', 'Level 6'];
-  selectedEquipmentOptions: string[] = [];
-  equipment = equipment;
+  equipmentSource = [
+    {
+      label: 'Starter',
+      value: 'starter',
+    },
+    {
+      label: 'Level 1',
+      value: 'level-1',
+    },
+    {
+      label: 'Level 2',
+      value: 'level-2',
+    },
+    {
+      label: 'Level 3',
+      value: 'level-3',
+    },
+    {
+      label: 'Level 4',
+      value: 'level-4',
+    },
+    {
+      label: 'Level 5',
+      value: 'level-5',
+    },
+    {
+      label: 'Rewards',
+      value: 'rewards',
+    },
+  ];
+  selectedEquipmentSources: string[] = [];
+  equipmentData = equipmentData;
+  equipment = [];
 
   mounted() {
     this.initializeGuild();
@@ -100,16 +110,16 @@ export default class SelectInventory extends Vue {
     }
   }
 
-  addEquipment(guildMember: GuildMember, equipment: Equipment) {
-    console.log('#addEquipment: guildMember:' + JSON.stringify(guildMember, null, 2));
-    console.log('#addEquipment: equipment:' + JSON.stringify(equipment, null, 2));
-    return;
-  }
-
-  removeEquipment(guildMember: GuildMember, equipment: Equipment) {
-    console.log('#removeEquipment: guildMember:' + JSON.stringify(guildMember, null, 2));
-    console.log('#removeEquipment: equipment:' + JSON.stringify(equipment, null, 2));
-    return;
+  setEquipment() {
+    const equipment: Equipment[] = [];
+    for (const source of this.selectedEquipmentSources) {
+      console.log(`#setEquipment: source: ${source}`);
+      console.log(`#setEquipment: ${source} equipment ${JSON.stringify(this.equipmentData[source], null, 2)}`);
+      equipment.push(...this.equipmentData[source]);
+    }
+    if (equipment.length) {
+      this.equipment = equipment;
+    }
   }
 
   advance() {
@@ -127,5 +137,9 @@ export default class SelectInventory extends Vue {
   .v-card__subtitle {
     text-align: left;
   }
+}
+
+.v-select__selection--comma {
+  color: #C4C3A7 !important;
 }
 </style>

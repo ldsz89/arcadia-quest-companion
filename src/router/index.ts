@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 import Home from '../views/Home.vue';
-import SelectCharacter from '@/views/SelectCharacter.vue';
+import SelectGuild from '@/views/SelectGuild.vue';
+import SelectCharacters from '@/views/SelectCharacters.vue';
 import SelectInventory from '@/views/SelectInventory.vue';
 
 Vue.use(VueRouter);
@@ -13,9 +14,14 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: '/select-character',
-    name: 'Select Character',
-    component: SelectCharacter,
+    path: '/select-guild',
+    name: 'Select Guild',
+    component: SelectGuild,
+  },
+  {
+    path: '/select-characters',
+    name: 'Select Characters',
+    component: SelectCharacters,
   },
   {
     path: '/select-inventory',

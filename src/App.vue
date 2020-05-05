@@ -4,7 +4,10 @@
       <router-link to="/">
         Home
       </router-link> |
-      <router-link to="/select-character">
+      <router-link to="/select-guild">
+        Select Guild
+      </router-link> |
+      <router-link to="/select-characters">
         Select Character
       </router-link> |
       <router-link to="/select-inventory">
@@ -14,7 +17,7 @@
         About
       </router-link>
     </div>
-    <router-view />
+    <router-view id="content" />
   </v-app>
 </template>
 
@@ -37,6 +40,16 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+
+#content {
+  border: 1em solid #C4C3A7;
+  background: rgb(174,51,71);
+  background: linear-gradient(90deg, rgba(174,51,71,1) 0%, rgba(99,31,46,1) 50%, rgba(174,51,71,1) 100%);
+
+  h1.guild-name {
+    color: #C4C3A7;
   }
 }
 </style>

@@ -1,150 +1,118 @@
 <template>
   <div>
     <v-container>
-      <v-row v-if="guilds.length">
-        <v-col cols="12">
-          <v-select
-            v-model="guild.name"
-            :items="guilds"
-            label="Guild"
-          />
-        </v-col>
-      </v-row>
-      <v-row
-        v-for="(guildMember, i) in guild.guildMembers"
-        :key="'guildMember-' + i"
-      >
+      <h1 class="guild-name">
+        {{ guild.name }}
+      </h1>
+      <v-select
+        v-model="selectedEquipmentOptions"
+        :items="equipmentOptions"
+        multiple
+      />
+      <v-row>
         <v-col
+          v-for="(guildMember, i) in guild.guildMembers"
+          :key="'guildMember-' + i"
           cols="12"
+          md="4"
           sm="6"
           xs="12"
         >
-          <character-card
-            :character="guildMember.character"
-          />
-        </v-col>
-        <v-col
-          cols="12"
-          sm="6"
-          xs="12"
-        >
-          <v-menu>
-            <template v-slot:activator="{ on }">
-              <v-btn
-                color="primary"
-                dark
-                v-on="on"
-              >
-                Add equipment
-              </v-btn>
-            </template>
-            <v-list>
+          <div>
+            <character-card
+              :character="guildMember.character"
+            />
+            <!-- <v-menu>
+              <template v-slot:activator="{ on }">
+                <v-btn
+                  color="primary"
+                  dark
+                  v-on="on"
+                  block
+                >
+                  Add equipment
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(equipment, index) in starterEquipment"
+                  :key="index"
+                  @click="addEquipment(guildMember, equipment)"
+                >
+                  <v-list-item-title>{{ equipment.name }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu> -->
+            <v-list dense>
               <v-list-item
-                v-for="(equipment, index) in starterEquipment"
-                :key="index"
-                @click="addEquipment(guildMember, equipment)"
+                v-for="(equipment, j) in guildMember.equipment"
+                :key="guildMember.character.name + '-equipment-' + j"
+                @click="removeEquipment(guildMember, equipment)"
               >
-                <v-list-item-title>{{ equipment.name }}</v-list-item-title>
+                <v-list-item-title class="text-left">
+                  {{ equipment.name }}
+                </v-list-item-title>
+                <v-list-item-subtitle>{{ equipment.description }}</v-list-item-subtitle>
               </v-list-item>
             </v-list>
-          </v-menu>
-          <v-list-item
-            v-for="(equipment, j) in guildMember.equipment"
-            :key="guildMember.character.name + '-equipment-' + j"
-            @click="removeEquipment(guildMember, equipment)"
-          >
-            <v-list-item-content>
-              <v-list-item-title class="text-left">
-                {{ equipment.name }}
-              </v-list-item-title>
-              <v-list-item-subtitle>{{ equipment.description }}</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
+          </div>
         </v-col>
       </v-row>
     </v-container>
-    <v-banner
-      v-if="showAdvanceBanner()"
-      sticky
-    >
-      <template v-slot:actions>
-        <v-btn
-          text
-          color="primary"
-          @click="advance()"
-        >
-          Continue
-        </v-btn>
-      </template>
-    </v-banner>
+    <bottom-banner
+      :advance="advance"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import Cookie from 'js-cookie';
-import {Character, Equipment, Guild, GuildMember} from '@/types';
+import {Equipment, Guild, GuildMember} from '@/types';
 import equipment from '@/data/equipment.json';
 import CharacterCard from '@/components/CharacterCard.vue';
+import BottomBanner from '@/components/BottomBanner.vue';
 
 @Component({
   components: {
     CharacterCard,
+    BottomBanner,
   },
 })
 export default class SelectInventory extends Vue {
-  guilds = ['Tiger', 'Crow', 'Shark', 'Snake'];
   guild: Guild = {
     name: '',
     guildMembers: [],
   };
-  characters: Character[] = [];
-  starterEquipment: Equipment[] = equipment.starters;
+  equipmentOptions = ['Starter', 'Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5', 'Level 6'];
+  selectedEquipmentOptions: string[] = [];
+  equipment = equipment;
 
   mounted() {
-    this.initializeCharacters();
     this.initializeGuild();
   }
 
-  initializeCharacters() {
-    const charactersCookie = Cookie.get('characters');
-    if (charactersCookie) {
-      this.characters = JSON.parse(charactersCookie);
-    }
-  }
-
   initializeGuild() {
-    for (const character of this.characters) {
-      const guildMember: GuildMember = {
-        character,
-        equipment: [],
-      };
-      this.guild.guildMembers.push(guildMember);
+    const guildCookie = Cookie.get('guild');
+    if (guildCookie) {
+      this.guild = JSON.parse(guildCookie);
     }
   }
 
   addEquipment(guildMember: GuildMember, equipment: Equipment) {
-    if (guildMember.equipment.length < 4 && this.starterEquipment.indexOf(equipment) !== -1) {
-      guildMember.equipment.push(equipment);
-      this.starterEquipment.splice(this.starterEquipment.indexOf(equipment), 1);
-    }
+    console.log('#addEquipment: guildMember:' + JSON.stringify(guildMember, null, 2));
+    console.log('#addEquipment: equipment:' + JSON.stringify(equipment, null, 2));
+    return;
   }
 
   removeEquipment(guildMember: GuildMember, equipment: Equipment) {
-    if (guildMember.equipment.indexOf(equipment) !== -1) {
-      guildMember.equipment.splice(guildMember.equipment.indexOf(equipment), 1);
-      this.starterEquipment.push(equipment);
-    }
-  }
-
-  showAdvanceBanner() {
-    return !this.starterEquipment.length && this.guild.name;
+    console.log('#removeEquipment: guildMember:' + JSON.stringify(guildMember, null, 2));
+    console.log('#removeEquipment: equipment:' + JSON.stringify(equipment, null, 2));
+    return;
   }
 
   advance() {
-    if (this.guild.name) {
-      Cookie.set('guild', JSON.stringify(this.guild));
-    }
+    Cookie.set('guild', JSON.stringify(this.guild));
   }
 }
 </script>

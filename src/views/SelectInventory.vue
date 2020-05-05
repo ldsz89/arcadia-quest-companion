@@ -7,6 +7,7 @@
       <v-select
         v-model="selectedEquipmentOptions"
         :items="equipmentOptions"
+        label="Equipment options"
         multiple
       />
       <v-row>

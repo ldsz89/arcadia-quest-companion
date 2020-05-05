@@ -1,6 +1,9 @@
 <template>
   <div>
     <v-container>
+      <h1 class="guild-name">
+        {{ guild.name }}
+      </h1>
       <v-row dense>
         <v-col
           v-for="(character, i) in characters"
@@ -15,9 +18,10 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-banner
+    <bottom-banner
       v-if="selectedCharacters.length"
-      sticky
+      :advance="advance"
+      :disabled="!(selectedCharacters.length === 3)"
     >
       <v-chip
         v-for="(character, i) in selectedCharacters"
@@ -29,34 +33,35 @@
         </v-avatar>
         {{ character.name }}
       </v-chip>
-      <template v-slot:actions>
-        <v-btn
-          text
-          color="primary"
-          @click="advance()"
-        >
-          Continue
-        </v-btn>
-      </template>
-    </v-banner>
+    </bottom-banner>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import SelectCharacterCard from '@/components/SelectCharacterCard.vue';
+import BottomBanner from '@/components/BottomBanner.vue';
 import characters from '@/data/characters.json';
-import {Character} from '../types';
+import {Character, Guild, GuildMember} from '../types';
 import Cookie from 'js-cookie';
 
 @Component({
   components: {
     SelectCharacterCard,
+    BottomBanner,
   },
 })
-export default class SelectCharcter extends Vue {
+export default class SelectCharcters extends Vue {
+  guild: Guild = {
+    name: '',
+    guildMembers: [],
+  };
   characters = characters;
   selectedCharacters: Character[] = [];
+
+  mounted() {
+    this.initializeGuild();
+  }
 
   selectCharacter(character: Character) {
     if (this.selectedCharacters.length < 3 && this.selectedCharacters.indexOf(character) === -1) {
@@ -73,9 +78,27 @@ export default class SelectCharcter extends Vue {
     }
   }
 
+  initializeGuild() {
+    const guildCookie = Cookie.get('guild');
+    if (guildCookie) {
+      this.guild = JSON.parse(guildCookie);
+    }
+  }
+
+  setGuildMembers() {
+    for (const character of this.selectedCharacters) {
+      const guildMember: GuildMember = {
+        character,
+        equipment: [],
+      };
+      this.guild.guildMembers.push(guildMember);
+    }
+  }
+
   advance() {
     if (this.selectedCharacters.length === 3) {
-      Cookie.set('characters', JSON.stringify(this.selectedCharacters));
+      this.setGuildMembers();
+      Cookie.set('guild', JSON.stringify(this.guild));
       this.$router.push('select-inventory');
     }
   }

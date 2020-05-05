@@ -13,6 +13,9 @@
       <router-link to="/select-inventory">
         Select Inventory
       </router-link> |
+      <router-link to="/guild-sheet">
+        Guild Sheet
+      </router-link> |
       <router-link to="/about">
         About
       </router-link>

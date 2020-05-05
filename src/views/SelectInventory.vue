@@ -31,8 +31,8 @@
               :key="guildMember.character.name + '-equipment-' + j"
               v-model="guildMember.equipment[j-1]"
               :items="equipment"
-              item-text="name"
-              item-value="name"
+              item-text="item"
+              item-value="value"
               background-color="#C4C3A7"
               color="#C4C3A7"
             />
@@ -97,7 +97,7 @@ export default class SelectInventory extends Vue {
   ];
   selectedEquipmentSources: string[] = [];
   equipmentData = equipmentData;
-  equipment = [];
+  equipment: any[] = [];
 
   mounted() {
     this.initializeGuild();
@@ -111,15 +111,16 @@ export default class SelectInventory extends Vue {
   }
 
   setEquipment() {
-    const equipment: Equipment[] = [];
+    const equipment = [];
     for (const source of this.selectedEquipmentSources) {
-      console.log(`#setEquipment: source: ${source}`);
-      console.log(`#setEquipment: ${source} equipment ${JSON.stringify(this.equipmentData[source], null, 2)}`);
-      equipment.push(...this.equipmentData[source]);
+      for (const data of this.equipmentData[source]) {
+        equipment.push({
+          item: data.name,
+          value: data,
+        });
+      }
     }
-    if (equipment.length) {
-      this.equipment = equipment;
-    }
+    this.equipment = equipment;
   }
 
   advance() {

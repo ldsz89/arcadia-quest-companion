@@ -124,6 +124,7 @@ export default class SelectInventory extends Vue {
 
   advance() {
     Cookie.set('guild', JSON.stringify(this.guild));
+    this.$router.push('guild-sheet');
   }
 }
 </script>

@@ -11,10 +11,11 @@ export interface Character {
 export interface Equipment {
   name: string;
   type: string;
-  strength: number;
+  strength?: number;
   item: string;
   description?: string;
   exhausted?: boolean;
+  cost?: number;
 }
 
 export interface GuildMember {

@@ -27,3 +27,9 @@ export interface Guild {
   name: string;
   guildMembers: GuildMember[];
 }
+
+export interface DeathCurse {
+  name: string;
+  value: number;
+  description: string;
+}

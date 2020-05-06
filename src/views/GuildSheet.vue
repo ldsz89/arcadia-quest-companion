@@ -18,10 +18,9 @@
             <v-col
               v-for="(equipment, j) in guildMember.equipment"
               :key="guildMember.character.name + '-equipment-' + j"
+              cols="6"
             >
-              <v-card>
-                <v-card-title>Title</v-card-title>
-              </v-card>
+              <equipment-card :equipment="equipment" />
             </v-col>
           </v-row>
         </v-col>
@@ -35,10 +34,12 @@ import {Component, Vue} from 'vue-property-decorator';
 import Cookie from 'js-cookie';
 import {Guild} from '@/types';
 import CharacterCard from '@/components/CharacterCard.vue';
+import EquipmentCard from '@/components/EquipmentCard.vue';
 
 @Component({
   components: {
     CharacterCard,
+    EquipmentCard,
   },
 })
 export default class GuildSheet extends Vue {

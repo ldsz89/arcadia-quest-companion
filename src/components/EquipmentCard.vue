@@ -1,5 +1,9 @@
 <template>
   <v-card>
+    <div
+      v-if="equipment.exhausted"
+      class="exhausted"
+    />
     <div class="equipment-card">
       <v-card-title class="equipment-title">
         {{ equipment.name }}
@@ -73,6 +77,15 @@ $attack-gradient: radial-gradient(circle, rgba(186,209,214,1) 0%, rgba(64,104,11
 $boost-gradient: radial-gradient(circle, rgba(155,182,78,1) 0%, rgba(62,95,30,1) 100%);
 $permanent-gradient: radial-gradient(circle, rgba(51,68,95,1) 0%, rgba(17,29,41,1) 100%);
 $accent: #CEC6B2;
+
+.exhausted {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
 
 .attack-solid {
   background: rgba(64,104,118,1);

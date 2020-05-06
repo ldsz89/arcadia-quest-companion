@@ -114,6 +114,7 @@ export default class SelectInventory extends Vue {
     const equipment = [];
     for (const source of this.selectedEquipmentSources) {
       for (const data of this.equipmentData[source]) {
+        data.exhausted = false;
         equipment.push({
           item: data.name,
           value: data,

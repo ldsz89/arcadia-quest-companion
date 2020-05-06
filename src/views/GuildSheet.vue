@@ -20,7 +20,10 @@
               :key="guildMember.character.name + '-equipment-' + j"
               cols="6"
             >
-              <equipment-card :equipment="equipment" />
+              <equipment-card
+                :equipment="equipment"
+                @click.native="toggleEquipmentExhaustion(equipment)"
+              />
             </v-col>
           </v-row>
         </v-col>
@@ -32,7 +35,7 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import Cookie from 'js-cookie';
-import {Guild} from '@/types';
+import {Guild, Equipment} from '@/types';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
 
@@ -56,6 +59,14 @@ export default class GuildSheet extends Vue {
     const guildCookie = Cookie.get('guild');
     if (guildCookie) {
       this.guild = JSON.parse(guildCookie);
+    }
+  }
+
+  toggleEquipmentExhaustion(equipment: Equipment) {
+    if (equipment.exhausted === undefined) {
+      equipment.exhausted = true;
+    } else {
+      equipment.exhausted = !equipment.exhausted;
     }
   }
 }

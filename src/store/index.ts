@@ -13,6 +13,15 @@ export default new Vuex.Store({
   state: {
     guild,
   },
+  getters: {
+    characters(state) {
+      const characters: Character[] = [];
+      for (const guildMember of state.guild.guildMembers) {
+        characters.push(guildMember.character);
+      }
+      return characters;
+    },
+  },
   mutations: {
     setGuildName(state, name: string) {
       state.guild.name = name;

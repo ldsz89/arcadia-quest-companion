@@ -43,9 +43,8 @@
 import {Component, Vue} from 'vue-property-decorator';
 import CharacterCard from '@/components/CharacterCard.vue';
 import BottomBanner from '@/components/BottomBanner.vue';
-import characters from '@/data/characters.json';
-import {Character, Guild, GuildMember} from '../types';
-import Cookie from 'js-cookie';
+import charactersData from '@/data/characters.json';
+import {Character, Guild, GuildMember, CharacterJSON} from '../types';
 
 @Component({
   components: {
@@ -58,22 +57,23 @@ export default class SelectCharcters extends Vue {
     name: '',
     guildMembers: [],
   };
-  characters = characters;
+  characterJSON = charactersData;
+  characters: Character[] = [];
   selectedCharacters: Character[] = [];
 
   mounted() {
     this.initializeGuild();
     this.updateSelectedCharacters();
-    this.initializeCharacters(this.characters);
+    this.characters = this.initializeCharacters(this.characterJSON);
   }
 
   initializeGuild() {
     this.guild = this.$store.state.guild;
   }
 
-  initializeCharacters(characters: Character[]) {
-    return characters.map((character) => {
-      character.exhausted = false;
+  initializeCharacters(characterJSON: CharacterJSON[]): Character[] {
+    return characterJSON.map((character): Character => {
+      return {...character, exhausted: false};
     });
   }
 
@@ -96,7 +96,6 @@ export default class SelectCharcters extends Vue {
       equipment: [],
     };
     if (this.$store.getters.characters.length < 3) {
-      guildMember.character.exhausted = false;
       this.$store.commit('addGuildMembers', guildMember);
     }
   }
@@ -106,7 +105,6 @@ export default class SelectCharcters extends Vue {
       character,
       equipment: [],
     };
-    guildMember.character.exhausted = false;
     this.$store.commit('removeGuildMember', guildMember);
   }
 
@@ -116,7 +114,7 @@ export default class SelectCharcters extends Vue {
 
   advance() {
     if (this.selectedCharacters.length === 3) {
-      // this.$router.push('select-inventory');
+      this.$router.push('select-inventory');
     }
   }
 }

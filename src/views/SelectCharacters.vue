@@ -89,6 +89,7 @@ export default class SelectCharcters extends Vue {
 
   setGuildMembers() {
     for (const character of this.selectedCharacters) {
+      character.exhausted = false;
       const guildMember: GuildMember = {
         character,
         equipment: [],

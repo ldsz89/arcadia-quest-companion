@@ -37,8 +37,8 @@ export default class CharacterCard extends Vue {
 
 <style lang="scss" scoped>
 div.v-card {
-  height: 15em;
-  // height: 19em;
+  // height: 15em;
+  height: 19em;
   border: 1em solid #EAE7E0;
   background: rgb(56,88,129);
   background: linear-gradient(0deg, rgba(56,88,129,1) 0%, rgba(108,145,172,1) 50%, rgba(56,88,129,1) 100%);

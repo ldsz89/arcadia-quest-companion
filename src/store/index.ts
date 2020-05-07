@@ -52,6 +52,13 @@ export default new Vuex.Store({
     //   const guildMemberIndex = state.guild.guildMembers.indexOf(guildMember);
     //   state.guildMembers[guildMemberIndex].equipment = equipment;
     // },
+    setGuildMemberEquipment(state, guildMember: GuildMember) {
+      for (const member of state.guild.guildMembers) {
+        if (member.character.name === guildMember.character.name) {
+          member.equipment = guildMember.equipment;
+        }
+      }
+    },
   },
   actions: {},
   modules: {},

@@ -61,6 +61,7 @@ export default class SelectCharcters extends Vue {
 
   mounted() {
     this.initializeGuild();
+    this.initializeSelectedCharacters();
   }
 
   selectCharacter(character: Character) {
@@ -79,10 +80,11 @@ export default class SelectCharcters extends Vue {
   }
 
   initializeGuild() {
-    const guildCookie = Cookie.get('guild');
-    if (guildCookie) {
-      this.guild = JSON.parse(guildCookie);
-    }
+    this.guild = this.$store.state.guild;
+  }
+
+  initializeSelectedCharacters() {
+    this.selectedCharacters = this.$store.getters.characters;
   }
 
   setGuildMembers() {
@@ -93,13 +95,13 @@ export default class SelectCharcters extends Vue {
       };
       this.guild.guildMembers.push(guildMember);
     }
+    this.$store.commit('setGuildMembers', this.guild.guildMembers);
   }
 
   advance() {
     if (this.selectedCharacters.length === 3) {
       this.setGuildMembers();
-      Cookie.set('guild', JSON.stringify(this.guild));
-      this.$router.push('select-inventory');
+      // this.$router.push('select-inventory');
     }
   }
 }

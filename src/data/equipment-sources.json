@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Starter",
+    "value": "starter"
+  },
+  {
+    "label": "Level 1",
+    "value": "level-1"
+  },
+  {
+    "label": "Level 2",
+    "value": "level-2"
+  },
+  {
+    "label": "Level 3",
+    "value": "level-3"
+  },
+  {
+    "label": "Level 4",
+    "value": "level-4"
+  },
+  {
+    "label": "Level 5",
+    "value": "level-5"
+  },
+  {
+    "label": "Rewards",
+    "value": "rewards"
+  }
+]

@@ -35,23 +35,15 @@ export default new Vuex.Store({
       }
     },
     removeGuildMember(state, guildMember: GuildMember) {
-      if (state.guild.guildMembers.indexOf(guildMember) !== -1) {
-        state.guild.guildMembers.splice(state.guild.guildMembers.indexOf(guildMember), 1);
+      for (const member of state.guild.guildMembers) {
+        if (member.character.name === guildMember.character.name) {
+          state.guild.guildMembers.splice(state.guild.guildMembers.indexOf(member), 1);
+        }
       }
     },
     clearGuildMembers(state) {
       state.guild.guildMembers = [];
     },
-    // setGuildMemberCharacter(state, guildMember: GuildMember, character: Character) {
-    //   const guildMemberIndex = state.guild.guildMembers.indexOf(guildMember);
-    //   if (guildMemberIndex !== -1) {
-    //     state.guild.guildMembers[guildMemberIndex].character = character;
-    //   }
-    // },
-    // setGuildMemberEquipment(state, guildMember: GuildMember, equipment: Equipment[]) {
-    //   const guildMemberIndex = state.guild.guildMembers.indexOf(guildMember);
-    //   state.guildMembers[guildMemberIndex].equipment = equipment;
-    // },
     setGuildMemberEquipment(state, guildMember: GuildMember) {
       for (const member of state.guild.guildMembers) {
         if (member.character.name === guildMember.character.name) {

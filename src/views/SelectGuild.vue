@@ -17,9 +17,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {Guild} from '../types';
 import BottomBanner from '@/components/BottomBanner.vue';
-import Cookie from 'js-cookie';
 
 @Component({
   components: {
@@ -32,10 +30,6 @@ export default class SelectGuild extends Vue {
 
   mounted() {
     this.guildName = this.$store.state.guild.name;
-  }
-
-  guild() {
-    return this.$store.state.guild;
   }
 
   setGuildName(name: string) {

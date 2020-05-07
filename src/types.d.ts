@@ -5,7 +5,7 @@ export interface Character {
   abilityName: string;
   abilityDescription: string;
   picture: string;
-  exhausted: boolean;
+  exhausted?: boolean;
 }
 
 export interface Equipment {

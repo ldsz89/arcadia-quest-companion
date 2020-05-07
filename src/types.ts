@@ -5,7 +5,16 @@ export interface Character {
   abilityName: string;
   abilityDescription: string;
   picture: string;
-  exhausted?: boolean;
+  exhausted: boolean;
+}
+
+export interface CharacterJSON {
+  name: string;
+  health: number;
+  defense: number;
+  abilityName: string;
+  abilityDescription: string;
+  picture: string;
 }
 
 export interface Equipment {

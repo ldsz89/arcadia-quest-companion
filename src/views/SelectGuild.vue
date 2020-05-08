@@ -2,13 +2,14 @@
   <div>
     <v-container>
       <v-select
-        v-model="guild.name"
+        v-model="guildName"
         :items="guilds"
         label="Guild"
+        @change="setGuildName(guildName)"
       />
     </v-container>
     <bottom-banner
-      v-if="guild.name"
+      v-if="guildName"
       :advance="advance"
     />
   </div>
@@ -16,9 +17,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {Guild} from '../types';
 import BottomBanner from '@/components/BottomBanner.vue';
-import Cookie from 'js-cookie';
 
 @Component({
   components: {
@@ -27,13 +26,17 @@ import Cookie from 'js-cookie';
 })
 export default class SelectGuild extends Vue {
   guilds = ['Tiger', 'Crow', 'Shark', 'Snake'];
-  guild: Guild = {
-    name: '',
-    guildMembers: [],
-  };
+  guildName = '';
+
+  mounted() {
+    this.guildName = this.$store.state.guild.name;
+  }
+
+  setGuildName(name: string) {
+    this.$store.commit('setGuildName', name);
+  }
 
   advance() {
-    Cookie.set('guild', JSON.stringify(this.guild));
     this.$router.push('select-characters');
   }
 }

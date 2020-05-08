@@ -5,7 +5,16 @@ export interface Character {
   abilityName: string;
   abilityDescription: string;
   picture: string;
-  exhausted?: boolean;
+  exhausted: boolean;
+}
+
+export interface CharacterJSON {
+  name: string;
+  health: number;
+  defense: number;
+  abilityName: string;
+  abilityDescription: string;
+  picture: string;
 }
 
 export interface Equipment {
@@ -14,7 +23,16 @@ export interface Equipment {
   strength?: number;
   item: string;
   description?: string;
-  exhausted?: boolean;
+  exhausted: boolean;
+  cost?: number;
+}
+
+export interface EquipmentJSON {
+  name: string;
+  type: string;
+  strength?: number;
+  item: string;
+  description?: string;
   cost?: number;
 }
 

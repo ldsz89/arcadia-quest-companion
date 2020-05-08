@@ -96,8 +96,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import Cookie from 'js-cookie';
-import {Equipment, Guild, GuildMember, EquipmentJSON} from '@/types';
+import {Equipment, Guild, GuildMember} from '@/types';
 import equipmentJSON from '@/data/equipment.json';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
@@ -141,7 +140,6 @@ export default class SelectInventory extends Vue {
   }
 
   advance() {
-    Cookie.set('guild', JSON.stringify(this.guild));
     this.$router.push('guild-sheet');
   }
 }

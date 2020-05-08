@@ -6,6 +6,40 @@ const guild: Guild = {
   name: '',
   guildMembers: [],
 };
+// const guild: Guild = {
+//   'name': 'Tiger',
+//   'guildMembers': [
+//     {
+//       'character': {
+//         'name': 'Kisha', 'health': 3, 'defense': 3, 'abilityName': 'Lucky Shot',
+//         'abilityDescription': '+1 Reroll for every equipped non-Magic Ranged attack card.',
+//         'picture': 'Kisha.png',
+//         'exhausted': false,
+//       },
+//       'equipment': [],
+//     },
+//     {
+//       'character': {
+//         'name': 'Jaimie', 'health': 3, 'defense': 3, 'abilityName': 'Shield Bash',
+//         'abilityDescription': 'May exhaust her Hero card to Move a Close Character up to 2 spaces away ' +
+//           '(this Move doesn\'t trigger Guard Reaction).',
+//         'picture': 'Jaimie.png',
+//         'exhausted': false,
+//       },
+//       'equipment': [],
+//     },
+//     {
+//       'character': {
+//         'name': 'Diana', 'health': 4, 'defense': 2, 'abilityName': 'Volley',
+//         'abilityDescription': 'When attacking a Clost Enemy with a Bow or Thrown Weapon, may target one extra ' +
+//           'Close enemy per crit rolled.',
+//         'picture': 'Diana.png',
+//         'exhausted': false,
+//       },
+//       'equipment': [],
+//     },
+//   ],
+// };
 
 Vue.use(Vuex);
 
@@ -46,12 +80,17 @@ export default new Vuex.Store({
     },
     setGuildMemberEquipment(state, guildMember: GuildMember) {
       for (const member of state.guild.guildMembers) {
-        if (member.character.name === guildMember.character.name) {
+        if (member.character === guildMember.character) {
           member.equipment = guildMember.equipment;
         }
       }
     },
   },
-  actions: {},
+  actions: {
+    // setGuildMemberEquipment(context: any, guildMember: GuildMember, equipment: Equipment[]) {
+    //   guildMember.equipment = equipment;
+    //   context.commit('setGuildEquipment', guildMember);
+    // },
+  },
   modules: {},
 });

@@ -27,6 +27,15 @@ export interface Equipment {
   cost?: number;
 }
 
+export interface EquipmentJSON {
+  name: string;
+  type: string;
+  strength?: number;
+  item: string;
+  description?: string;
+  cost?: number;
+}
+
 export interface GuildMember {
   character: Character;
   equipment: Equipment[];

@@ -22,7 +22,7 @@
             >
               <equipment-card
                 :equipment="equipment"
-                @click.native="toggleEquipmentExhaustion(equipment)"
+                @click.native="toggleEquipmentExhaustion(guildMember, equipment)"
               />
             </v-col>
           </v-row>
@@ -34,8 +34,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import Cookie from 'js-cookie';
-import {Guild, Equipment} from '@/types';
+import {Guild, Equipment, GuildMember} from '@/types';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
 
@@ -56,18 +55,12 @@ export default class GuildSheet extends Vue {
   }
 
   initializeGuild() {
-    const guildCookie = Cookie.get('guild');
-    if (guildCookie) {
-      this.guild = JSON.parse(guildCookie);
-    }
+    this.guild = this.$store.state.guild;
   }
 
-  toggleEquipmentExhaustion(equipment: Equipment) {
-    if (equipment.exhausted === undefined) {
-      equipment.exhausted = true;
-    } else {
-      equipment.exhausted = !equipment.exhausted;
-    }
+  toggleEquipmentExhaustion(guildMember: GuildMember, equipment: Equipment) {
+    equipment.exhausted = !equipment.exhausted;
+    this.$store.commit('setGuildMemberEquipment', guildMember);
   }
 }
 </script>

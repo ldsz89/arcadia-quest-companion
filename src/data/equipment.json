@@ -77,8 +77,9 @@
       "type": "Melee Attack",
       "strength": 3,
       "item": "Sword",
-      "description": "+1 reroll and +1 defense",
-      "cost": 1
+      "cost": 1,
+      "reroll": 1,
+      "defense": 1
     },
     {
       "name": "Crusader Shot",
@@ -114,15 +115,18 @@
       "name": "Cloven Hoof",
       "type": "Permanent",
       "item": "Bling",
-      "description": "+1 reroll, +1 health, At the start of his activation, this Hero may take 1 Damnation to heal 1 Wound.",
-      "cost": 0
+      "description": "At the start of his activation, this Hero may take 1 Damnation to heal 1 Wound.",
+      "cost": 0,
+      "reroll": 1,
+      "health": 1
     },
     {
       "name": "Infernal Shield",
       "type": "Permanent",
       "item": "Shield",
-      "description": "+1 defense, This Hero may take 1 Damnation to roll an extra Defense die.",
-      "cost": 1
+      "description": "This Hero may take 1 Damnation to roll an extra Defense die.",
+      "cost": 1,
+      "defense": 1
     },
     {
       "name": "Tainted Bow",
@@ -136,8 +140,9 @@
       "name": "Infernal Shield",
       "type": "Permanent",
       "item": "Shield",
-      "description": "+1 defense, This Hero may take 1 Damnation to roll an extra Defense die.",
-      "cost": 1
+      "description": "This Hero may take 1 Damnation to roll an extra Defense die.",
+      "cost": 1,
+      "defense": 1
     },
     {
       "name": "Drive Thru",
@@ -165,8 +170,10 @@
       "name": "Cloven Hoof",
       "type": "Permanent",
       "item": "Bling",
-      "description": "+1 reroll, +1 health, At the start of his activation, this Hero may take 1 Damnation to heal 1 Wound.",
-      "cost": 0
+      "description": "At the start of his activation, this Hero may take 1 Damnation to heal 1 Wound.",
+      "cost": 0,
+      "reroll": 1,
+      "health": 1
     },
     {
       "name": "Katar",
@@ -205,8 +212,9 @@
       "type": "Melee Attack",
       "strength": 3,
       "item": "Sword",
-      "description": "+1 reroll and +1 defense",
-      "cost": 1
+      "cost": 1,
+      "reroll": 1,
+      "defense": 1
     },
     {
       "name": "Cleansing Glow",
@@ -222,8 +230,10 @@
       "name": "Horned Shield",
       "type": "Permanent",
       "item": "Shield",
-      "description": "+2 Defense, +1 Reroll, This Hero may take 1 Damnation to roll an extra Defense die.",
-      "cost": 3
+      "description": "This Hero may take 1 Damnation to roll an extra Defense die.",
+      "cost": 3,
+      "defense": 2,
+      "reroll": 1
     },
     {
       "name": "Ghastly Bow",
@@ -275,29 +285,35 @@
       "name": "Infernal Plate",
       "type": "Permanent",
       "item": "Armour",
-      "description": "Limit 1 armor per Hero. +2 Defense, +1 Health",
-      "cost": 6
+      "description": "Limit 1 armor per Hero.",
+      "cost": 6,
+      "defense": 2,
+      "health": 1
     },
     {
       "name": "Infernal Plate",
       "type": "Permanent",
       "item": "Armour",
-      "description": "Limit 1 armor per Hero. +2 Defense, +1 Health",
-      "cost": 6
+      "description": "Limit 1 armor per Hero.",
+      "cost": 6,
+      "defense": 2,
+      "health": 1
     },
     {
       "name": "Vicious Ring",
       "type": "Permanent",
       "item": "Bling",
-      "description": "+2 Reroll, This Hero may take 1 Damnation to gain an extra Reroll.",
-      "cost": 0
+      "description": "This Hero may take 1 Damnation to gain an extra Reroll.",
+      "cost": 0,
+      "reroll": 2
     },
     {
       "name": "Vicious Ring",
       "type": "Permanent",
       "item": "Bling",
-      "description": "+2 Reroll, This Hero may take 1 Damnation to gain an extra Reroll.",
-      "cost": 0
+      "description": "This Hero may take 1 Damnation to gain an extra Reroll.",
+      "cost": 0,
+      "reroll": 2
     },
     {
       "name": "Grievous Trident",
@@ -336,16 +352,18 @@
       "type": "Melee Attack",
       "strength": 4,
       "item": "Sword",
-      "description": "+1 Reroll, +2 Defense",
-      "cost": 1
+      "cost": 1,
+      "reroll": 1,
+      "defense": 2
     },
     {
       "name": "Shiny Blade",
       "type": "Melee Attack",
       "strength": 4,
       "item": "Sword",
-      "description": "+1 Reroll, +2 Defense",
-      "cost": 1
+      "cost": 1,
+      "reroll": 1,
+      "defense": 2
     },
     {
       "name": "Nasty Pendant",
@@ -402,12 +420,194 @@
   ],
   "level-3": [
     {
-      "name": "",
-      "type": "",
-      "strength": 1,
-      "item": "",
-      "description": "",
+      "name": "Ashen Mace",
+      "type": "Melee Attack",
+      "strength": 4,
+      "item": "Hammer",
+      "description": "If this deals any Wounds, choose and exhaust one of the target's cards.",
+      "cost": 2
+    },
+    {
+      "name": "Ashen Mace",
+      "type": "Melee Attack",
+      "strength": 4,
+      "item": "Hammer",
+      "description": "If this deals any Wounds, choose and exhaust one of the target's cards.",
+      "cost": 2
+    },
+    {
+      "name": "Dual Katar",
+      "type": "Melee Attack",
+      "strength": 4,
+      "item": "Exotic",
+      "description": "May be exhausted twice.",
+      "cost": 1
+    },
+    {
+      "name": "Dual Katar",
+      "type": "Melee Attack",
+      "strength": 4,
+      "item": "Exotic",
+      "description": "May be exhausted twice.",
+      "cost": 1
+    },
+    {
+      "name": "Golden Chakram",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Thrown Weapon",
+      "description": "When attacking a Close Enemy, hits on Melee icons instead of Ranged icons.",
+      "cost": 3
+    },
+    {
+      "name": "Golden Chakram",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Thrown Weapon",
+      "description": "When attacking a Close Enemy, hits on Melee icons instead of Ranged icons.",
+      "cost": 3
+    },
+    {
+      "name": "Nefarious Stomp",
+      "type": "Melee Attack",
+      "strength": 6,
+      "item": "Hammer",
+      "description": "To use this, the Hero takes 1 Damnation. If this deals any Wounds, your target is Dazed.",
+      "cost": 7
+    },
+    {
+      "name": "Brittany Bow",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Bow",
+      "description": "This Hero may take 1 Damnation to roll +1 die for this attack.",
+      "cost": 3
+    },
+    {
+      "name": "Brittany Bow",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Bow",
+      "description": "This Hero may take 1 Damnation to roll +1 die for this attack.",
+      "cost": 3
+    },
+    {
+      "name": "Grimbolt II",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Magic",
+      "description": "If this deals any Wounds, this Hero may take 2 Damnation to deal 1 addtional Wound.",
+      "cost": 3
+    },
+    {
+      "name": "Grimbolt II",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Magic",
+      "description": "If this deals any Wounds, this Hero may take 2 Damnation to deal 1 addtional Wound.",
+      "cost": 3
+    },
+    {
+      "name": "Searing II",
+      "type": "Ranged Attack",
+      "strength": 2,
+      "item": "Magic",
+      "description": "If this rolls any Hits against a Hero, Saves scored by the Defense roll count as Wounds against him instead.",
+      "cost": 4
+    },
+    {
+      "name": "Chasten",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Magic",
+      "description": "This attack rolls +1 die if the target Hero has any Damnation.",
+      "cost": 4
+    },
+    {
+      "name": "Chasten",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Magic",
+      "description": "This attack rolls +1 die if the target Hero has any Damnation.",
+      "cost": 4
+    },
+    {
+      "name": "Healing Bracer II",
+      "type": "Boost",
+      "item": "Gear",
+      "description": "Each Wound dealt by the boosted Melee Atack heals 2 Wounds from This Hero",
       "cost": 0
+    },
+    {
+      "name": "Wand of Swiftness",
+      "type": "Boost",
+      "item": "Gear",
+      "description": "+1 die to a Magic attack card. After the atack, this Hero gains 1 extra Movement Point to use this turn.",
+      "cost": 4
+    },
+    {
+      "name": "Blond Elf Gloves",
+      "type": "Boost",
+      "item": "Gear",
+      "description": "+1 die to one non-Magic Ranged attack card. Do not exhaust the boosted card.",
+      "cost": 0
+    },
+    {
+      "name": "Thorny Bracer",
+      "type": "Permanent",
+      "item": "Gear",
+      "description": "Each Hit cancelled by this Hero's Defense roll deals 1 Wound and 1 Damnation to the attacking Hero.",
+      "cost": 7
+    },
+    {
+      "name": "Batter Up!",
+      "type": "Permanent",
+      "item": "Ability",
+      "description": "If your attack rolls any crits, you may activate another allied Hero this turn.",
+      "cost": 4
+    },
+    {
+      "name": "Batter Up!",
+      "type": "Permanent",
+      "item": "Ability",
+      "description": "If your attack rolls any crits, you may activate another allied Hero this turn.",
+      "cost": 4
+    },
+    {
+      "name": "Profane Shield",
+      "type": "Permanent",
+      "item": "Shield",
+      "description": "This Hero may take 1 Damnation to roll an extra Defense die.",
+      "cost": 6,
+      "defense": 4,
+      "reroll": 1
+    },
+    {
+      "name": "Profane Shield",
+      "type": "Permanent",
+      "item": "Shield",
+      "description": "This Hero may take 1 Damnation to roll an extra Defense die.",
+      "cost": 6,
+      "defense": 4,
+      "reroll": 1
+    },
+    {
+      "name": "Cloven Hoof II",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "At the start of his activation, this Hero may take 1 Damnation to heal 2 Wounds.",
+      "cost": 0,
+      "reroll": 2,
+      "health": 2
+    },
+    {
+      "name": "Cloven Hoof II",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "At the start of his activation, this Hero may take 1 Damnation to heal 2 Wounds.",
+      "cost": 0,
+      "reroll": 2,
+      "health": 2
     }
   ],
   "level-4": [

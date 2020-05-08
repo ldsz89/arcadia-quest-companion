@@ -25,6 +25,9 @@ export interface Equipment {
   description?: string;
   exhausted: boolean;
   cost?: number;
+  defense?: number;
+  reroll?: number;
+  health?: number;
 }
 
 export interface EquipmentJSON {

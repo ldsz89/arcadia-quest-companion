@@ -39,43 +39,43 @@
                     >
                       <equipment-menu
                         title="Starters"
-                        :equipment="equipmentJSON.starters"
+                        :equipment="equipment.starters"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
                       <equipment-menu
                         title="Level 1"
-                        :equipment="equipmentJSON['level-1']"
+                        :equipment="equipment['level-1']"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
                       <equipment-menu
                         title="Level 2"
-                        :equipment="equipmentJSON['level-2']"
+                        :equipment="equipment['level-2']"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
                       <equipment-menu
                         title="Level 3"
-                        :equipment="equipmentJSON['level-3']"
+                        :equipment="equipment['level-3']"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
                       <equipment-menu
                         title="Level 4"
-                        :equipment="equipmentJSON['level-4']"
+                        :equipment="equipment['level-4']"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
                       <equipment-menu
                         title="Level 5"
-                        :equipment="equipmentJSON['level-5']"
+                        :equipment="equipment['level-5']"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
                       <equipment-menu
                         title="Rewards"
-                        :equipment="equipmentJSON.rewards"
+                        :equipment="equipment.rewards"
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
@@ -96,12 +96,32 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {Equipment, Guild, GuildMember} from '@/types';
+import {Equipment, Guild, GuildMember, EquipmentJSON} from '@/types';
 import equipmentJSON from '@/data/equipment.json';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
 import EquipmentMenu from '@/components/EquipmentMenu.vue';
 import BottomBanner from '@/components/BottomBanner.vue';
+
+interface EquipmentData {
+  'starters': Equipment[];
+  'level-1': Equipment[];
+  'level-2': Equipment[];
+  'level-3': Equipment[];
+  'level-4': Equipment[];
+  'level-5': Equipment[];
+  'rewards': Equipment[];
+}
+
+interface EquipmentJSONData {
+  'starters': EquipmentJSON[];
+  'level-1': EquipmentJSON[];
+  'level-2': EquipmentJSON[];
+  'level-3': EquipmentJSON[];
+  'level-4': EquipmentJSON[];
+  'level-5': EquipmentJSON[];
+  'rewards': EquipmentJSON[];
+}
 
 @Component({
   components: {
@@ -116,15 +136,51 @@ export default class SelectInventory extends Vue {
     name: '',
     guildMembers: [],
   };
-  equipmentJSON = equipmentJSON;
-  equipment: Equipment[] = [];
+  equipmentJSON: EquipmentJSONData = equipmentJSON;
+  equipment!: EquipmentData;;
 
   mounted() {
     this.initializeGuild();
+    this.equipment = this.initializeEquipment(this.equipmentJSON);
   }
 
   initializeGuild() {
     this.guild = this.$store.state.guild;
+  }
+
+  initializeEquipment(equipmentJSON: EquipmentJSONData): EquipmentData {
+    const equipment: EquipmentData = {
+      'starters': [],
+      'level-1': [],
+      'level-2': [],
+      'level-3': [],
+      'level-4': [],
+      'level-5': [],
+      'rewards': [],
+    };
+    equipment.starters = equipmentJSON.starters.map((equ) => {
+      return {...equ, exhausted: false};
+    });
+    equipment['level-1'] = equipmentJSON['level-1'].map((equ) => {
+      return {...equ, exhausted: false};
+    });
+    equipment['level-2'] = equipmentJSON['level-2'].map((equ) => {
+      return {...equ, exhausted: false};
+    });
+    equipment['level-3'] = equipmentJSON['level-3'].map((equ) => {
+      return {...equ, exhausted: false};
+    });
+    equipment['level-4'] = equipmentJSON['level-4'].map((equ) => {
+      return {...equ, exhausted: false};
+    });
+    equipment['level-5'] = equipmentJSON['level-5'].map((equ) => {
+      return {...equ, exhausted: false};
+    });
+    equipment.rewards = equipmentJSON.rewards.map((equ) => {
+      return {...equ, exhausted: false};
+    });
+
+    return equipment;
   }
 
   addEquipment(guildMember: GuildMember, equipment: Equipment) {

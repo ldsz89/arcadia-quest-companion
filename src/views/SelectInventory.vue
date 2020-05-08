@@ -43,6 +43,42 @@
                         :guild-member="guildMember"
                         :add="addEquipment"
                       />
+                      <equipment-menu
+                        title="Level 1"
+                        :equipment="equipmentJSON['level-1']"
+                        :guild-member="guildMember"
+                        :add="addEquipment"
+                      />
+                      <equipment-menu
+                        title="Level 2"
+                        :equipment="equipmentJSON['level-2']"
+                        :guild-member="guildMember"
+                        :add="addEquipment"
+                      />
+                      <equipment-menu
+                        title="Level 3"
+                        :equipment="equipmentJSON['level-3']"
+                        :guild-member="guildMember"
+                        :add="addEquipment"
+                      />
+                      <equipment-menu
+                        title="Level 4"
+                        :equipment="equipmentJSON['level-4']"
+                        :guild-member="guildMember"
+                        :add="addEquipment"
+                      />
+                      <equipment-menu
+                        title="Level 5"
+                        :equipment="equipmentJSON['level-5']"
+                        :guild-member="guildMember"
+                        :add="addEquipment"
+                      />
+                      <equipment-menu
+                        title="Rewards"
+                        :equipment="equipmentJSON.rewards"
+                        :guild-member="guildMember"
+                        :add="addEquipment"
+                      />
                     </v-col>
                   </v-row>
                 </v-card>

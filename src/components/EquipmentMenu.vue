@@ -4,6 +4,7 @@
       <v-btn
         color="primary"
         dark
+        tile
         v-on="on"
       >
         {{ title }}

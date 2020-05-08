@@ -612,12 +612,192 @@
   ],
   "level-4": [
     {
-      "name": "",
-      "type": "",
-      "strength": 1,
-      "item": "",
-      "description": "",
-      "cost": 0
+      "name": "Unholy Plate",
+      "type": "Permanent",
+      "item": "Armor",
+      "description": "Limit 1 armor per Hero",
+      "cost": 6,
+      "defense": 4,
+      "health": 2
+    },
+    {
+      "name": "Unholy Plate",
+      "type": "Permanent",
+      "item": "Armor",
+      "description": "Limit 1 armor per Hero",
+      "cost": 6,
+      "defense": 4,
+      "health": 2
+    },
+    {
+      "name": "Sophie's Choice",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "Before you attack a Hero, the target must choose: take 3 Damnation or double the Wounds he suffers.",
+      "cost": 8
+    },
+    {
+      "name": "Shockwave II",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "If this rolls ant crits, move target and 1 extra Close Enemy up to 4 Spaces (this move doesn't trigger Guard Reaction).",
+      "cost": 3
+    },
+    {
+      "name": "Shockwave II",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "If this rolls ant crits, move target and 1 extra Close Enemy up to 4 Spaces (this move doesn't trigger Guard Reaction).",
+      "cost": 3
+    },
+    {
+      "name": "Cleansing Glow II",
+      "type": "Ranged Attack",
+      "strength": 6,
+      "item": "Magic",
+      "description": "For each Wound this deals, remove 1 Damnation from this Hero or from one Close Ally.",
+      "cost": 5
+    },
+    {
+      "name": "Megablade",
+      "type": "Melee Attack",
+      "strength": 6,
+      "item": "Sword",
+      "cost": 7,
+      "reroll": 3
+    },
+    {
+      "name": "Vicious Ring II",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "This Hero may take 1 Damnation to gain an extra Reroll.",
+      "cost": 0,
+      "reroll": 4
+    },
+    {
+      "name": "Vicious Ring II",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "This Hero may take 1 Damnation to gain an extra Reroll.",
+      "cost": 0,
+      "reroll": 4
+    },
+    {
+      "name": "Maleficent Trident",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Lance",
+      "description": "For any attack this Hero amkes, he may take 2 Damnation to roll +2 dice.",
+      "cost": 4
+    },
+    {
+      "name": "Maleficent Trident",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Lance",
+      "description": "For any attack this Hero amkes, he may take 2 Damnation to roll +2 dice.",
+      "cost": 4
+    },
+    {
+      "name": "Mourning Star",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Hammer",
+      "description": "If this deals any Wounds, choose and exhaust one of the target's cards.",
+      "cost": 2
+    },
+    {
+      "name": "Mourning Star",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Hammer",
+      "description": "If this deals any Wounds, choose and exhaust one of the target's cards.",
+      "cost": 2
+    },
+    {
+      "name": "Lifebound III",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "Each Hit heals 1 Wound from this Hero and all Allies Close to the target.",
+      "cost": 4
+    },
+    {
+      "name": "Lifebound III",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "Each Hit heals 1 Wound from this Hero and all Allies Close to the target.",
+      "cost": 4
+    },
+    {
+      "name": "Angelic Ring II",
+      "type": "Boost",
+      "item": "Bling",
+      "description": "+2 dice to one Attack card.",
+      "cost": 3
+    },
+    {
+      "name": "Unholy Shield",
+      "type": "Permanent",
+      "item": "Shield",
+      "description": "This Hero amy take 1 Damnation to roll an extra Defense die.",
+      "cost": 5,
+      "defense": 3,
+      "reroll": 3
+    },
+    {
+      "name": "Crusader Shot II",
+      "type": "Permanent",
+      "item": "Ability",
+      "description": "Your Bow and Thrown Weapon attacks roll +2 dice if the target Hero has any Damnation.",
+      "cost": 1
+    },
+    {
+      "name": "Crusader Strike II",
+      "type": "Permanent",
+      "item": "Ability",
+      "description": "Your Sword and Exotic attacks roll +2 dice if the target Hero has any Damnation.",
+      "cost": 1
+    },
+    {
+      "name": "Blond Elf Gloves II",
+      "type": "Boost",
+      "item": "Gear",
+      "description": "+2 dice to one non-Magic Ranged attack card. Do not exhaust the boosted card.",
+      "cost": 3
+    },
+    {
+      "name": "Redemption Glass II",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "At the start of yout turn, this Hero heals 2 Wounds and 2 Damnation.",
+      "cost": 8
+    },
+    {
+      "name": "Drive Thru II",
+      "type": "Permanent",
+      "item": "Ability",
+      "description": "Your Lancve and Exotic attacks may target all Enemies Close to this Hero.",
+      "cost": 1
+    },
+    {
+      "name": "Widow's Lament",
+      "type": "Ranged Attack",
+      "strength": 3,
+      "item": "Bow",
+      "description": "Roll an extra die for each Hit obtained from a non-crit result.",
+      "cost": 7
+    },
+    {
+      "name": "Hateful Bow",
+      "type": "Ranged Attack",
+      "strength": 6,
+      "item": "Bow",
+      "description": "To use this, the Hero takes 1 Damnation.",
+      "cost": 7
     }
   ],
   "level-5": [

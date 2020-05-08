@@ -9,11 +9,13 @@
           v-for="(character, i) in characters"
           :key="'select-' + i"
           cols="12"
+          md="4"
+          xs="12"
         >
-          <select-character-card
+          <character-card
             :character="character"
-            :select="selectCharacter"
-            :deselect="deselectCharacter"
+            :selected="isSelected(character)"
+            @click.native="toggleCharacter(character)"
           />
         </v-col>
       </v-row>
@@ -39,15 +41,14 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import SelectCharacterCard from '@/components/SelectCharacterCard.vue';
+import CharacterCard from '@/components/CharacterCard.vue';
 import BottomBanner from '@/components/BottomBanner.vue';
-import characters from '@/data/characters.json';
-import {Character, Guild, GuildMember} from '../types';
-import Cookie from 'js-cookie';
+import charactersData from '@/data/characters.json';
+import {Character, Guild, GuildMember, CharacterJSON} from '../types';
 
 @Component({
   components: {
-    SelectCharacterCard,
+    CharacterCard,
     BottomBanner,
   },
 })
@@ -56,49 +57,68 @@ export default class SelectCharcters extends Vue {
     name: '',
     guildMembers: [],
   };
-  characters = characters;
+  characterJSON = charactersData;
+  characters: Character[] = [];
   selectedCharacters: Character[] = [];
 
   mounted() {
     this.initializeGuild();
+    this.updateSelectedCharacters();
+    this.characters = this.initializeCharacters(this.characterJSON);
+  }
+
+  initializeGuild() {
+    this.guild = this.$store.state.guild;
+  }
+
+  initializeCharacters(characterJSON: CharacterJSON[]): Character[] {
+    return characterJSON.map((character): Character => {
+      return {...character, exhausted: false};
+    });
+  }
+
+  updateSelectedCharacters() {
+    this.selectedCharacters = this.$store.getters.characters;
+  }
+
+  toggleCharacter(character: Character) {
+    if (this.isSelected(character)) {
+      this.deselectCharacter(character);
+    } else {
+      this.selectCharacter(character);
+    }
+    this.updateSelectedCharacters();
   }
 
   selectCharacter(character: Character) {
-    if (this.selectedCharacters.length < 3 && this.selectedCharacters.indexOf(character) === -1) {
-      this.selectedCharacters.push(character);
-      return true;
+    const guildMember: GuildMember = {
+      character,
+      equipment: [],
+    };
+    if (this.$store.getters.characters.length < 3) {
+      this.$store.commit('addGuildMembers', guildMember);
+    }
+  }
+
+  deselectCharacter(character: Character) {
+    const guildMember: GuildMember = {
+      character,
+      equipment: [],
+    };
+    this.$store.commit('removeGuildMember', guildMember);
+  }
+
+  isSelected(character: Character): boolean {
+    for (const char of this.$store.getters.characters) {
+      if (char.name === character.name) {
+        return true;
+      }
     }
     return false;
   }
 
-  deselectCharacter(character: Character) {
-    const characterIndex = this.selectedCharacters.indexOf(character);
-    if (characterIndex !== -1) {
-      this.selectedCharacters.splice(characterIndex, 1);
-    }
-  }
-
-  initializeGuild() {
-    const guildCookie = Cookie.get('guild');
-    if (guildCookie) {
-      this.guild = JSON.parse(guildCookie);
-    }
-  }
-
-  setGuildMembers() {
-    for (const character of this.selectedCharacters) {
-      const guildMember: GuildMember = {
-        character,
-        equipment: [],
-      };
-      this.guild.guildMembers.push(guildMember);
-    }
-  }
-
   advance() {
     if (this.selectedCharacters.length === 3) {
-      this.setGuildMembers();
-      Cookie.set('guild', JSON.stringify(this.guild));
       this.$router.push('select-inventory');
     }
   }

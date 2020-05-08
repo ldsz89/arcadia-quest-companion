@@ -1,26 +1,32 @@
 <template>
   <v-app id="app">
-    <div id="nav">
-      <router-link to="/">
-        Home
-      </router-link> |
-      <router-link to="/select-guild">
-        Select Guild
-      </router-link> |
-      <router-link to="/select-characters">
-        Select Character
-      </router-link> |
-      <router-link to="/select-inventory">
-        Select Inventory
-      </router-link> |
-      <router-link to="/guild-sheet">
-        Guild Sheet
-      </router-link> |
-      <router-link to="/about">
-        About
-      </router-link>
-    </div>
-    <router-view id="content" />
+    <v-app-bar app>
+      <v-toolbar-title>Arcadia Quest Companion</v-toolbar-title>
+      <v-spacer />
+      <div id="nav">
+        <router-link to="/">
+          Home
+        </router-link> |
+        <router-link to="/select-guild">
+          Select Guild
+        </router-link> |
+        <router-link to="/select-characters">
+          Select Character
+        </router-link> |
+        <router-link to="/select-inventory">
+          Select Inventory
+        </router-link> |
+        <router-link to="/guild-sheet">
+          Guild Sheet
+        </router-link> |
+        <router-link to="/about">
+          About
+        </router-link>
+      </div>
+    </v-app-bar>
+    <v-content>
+      <router-view id="content" />
+    </v-content>
   </v-app>
 </template>
 

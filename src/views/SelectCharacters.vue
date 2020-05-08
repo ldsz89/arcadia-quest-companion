@@ -82,7 +82,7 @@ export default class SelectCharcters extends Vue {
   }
 
   toggleCharacter(character: Character) {
-    if (this.$store.getters.characters.indexOf(character) !== -1) {
+    if (this.isSelected(character)) {
       this.deselectCharacter(character);
     } else {
       this.selectCharacter(character);
@@ -108,8 +108,13 @@ export default class SelectCharcters extends Vue {
     this.$store.commit('removeGuildMember', guildMember);
   }
 
-  isSelected(character: Character) {
-    return this.selectedCharacters.includes(character);
+  isSelected(character: Character): boolean {
+    for (const char of this.$store.getters.characters) {
+      if (char.name === character.name) {
+        return true;
+      }
+    }
+    return false;
   }
 
   advance() {

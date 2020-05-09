@@ -802,21 +802,272 @@
   ],
   "level-5": [
     {
-      "name": "",
-      "type": "",
-      "strength": 1,
-      "item": "",
-      "description": "",
+      "name": "Uberblade",
+      "type": "Melee Attack",
+      "strength": 6,
+      "item": "Sword",
+      "cost": 7,
+      "defense": 3
+    },
+    {
+      "name": "Ball Breaker",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Hammer",
+      "description": "If this deals any Wounds, exhaust all of the target's cards.",
+      "cost": 4
+    },
+    {
+      "name": "Ball Breaker",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Hammer",
+      "description": "If this deals any Wounds, exhaust all of the target's cards.",
+      "cost": 4
+    },
+    {
+      "name": "Trine Katar",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Exotic",
+      "description": "May be exhausted twice.",
+      "cost": 1
+    },
+    {
+      "name": "Trine Katar",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Exotic",
+      "description": "May be exhausted twice.",
+      "cost": 1
+    },
+    {
+      "name": "Viper Bow",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Bow",
+      "description": "This Hero may take 2 Damnation to roll +2 dice for this attack.",
+      "cost": 2
+    },
+    {
+      "name": "Viper Bow",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Bow",
+      "description": "This Hero may take 2 Damnation to roll +2 dice for this attack.",
+      "cost": 2
+    },
+    {
+      "name": "Neon Chakram",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Thrown Weapon",
+      "description": "When attacking a Close Enemy, hits on Melee icons instead of Ranged icons.",
+      "cost": 2
+    },
+    {
+      "name": "Neon Chakram",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Thrown Weapon",
+      "description": "When attacking a Close Enemy, hits on Melee icons instead of Ranged icons.",
+      "cost": 2
+    },
+    {
+      "name": "Shockwave III",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "If this rolls ant crits, move the target and all Close Enemies up to 4 Spaces (this move doesn't trigger Guard Reaction).",
+      "cost": 2
+    },
+    {
+      "name": "Shockwave III",
+      "type": "Melee Attack",
+      "strength": 5,
+      "item": "Magic", 
+      "description": "If this rolls ant crits, move the target and all Close Enemies up to 4 Spaces (this move doesn't trigger Guard Reaction).",
+      "cost": 2
+    },
+    {
+      "name": "Grimbolt III",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "If this deals any Wounds, this Hero may Hero may take 2 Damnation to deal 1 additional Wound.",
+      "cost": 3
+    },
+    {
+      "name": "Chasten II",
+      "type": "Ranged Attack",
+      "strength": 5,
+      "item": "Magic",
+      "description": "This attack rolls +2 dice if the target Hero has any Damnation.",
+      "cost": 5
+    },
+    {
+      "name": "Angelic Ring III",
+      "type": "Boost",
+      "item": "Bling",
+      "description": "+3 dice to one Attack card.",
+      "cost": 4
+    },
+    {
+      "name": "Angelic Ring III",
+      "type": "Boost",
+      "item": "Bling",
+      "description": "+3 dice to one Attack card.",
+      "cost": 4
+    },
+    {
+      "name": "Wand of Swiftness II",
+      "type": "Boost",
+      "item": "Gear",
+      "description": "+2 dice to a Magic attack card. After the attack, this Hero gains 1 extra Movement Point to use this turn.",
+      "cost": 4
+    },
+    {
+      "name": "Ultraviolent Shield",
+      "type": "Permanent",
+      "item": "Shield",
+      "description": "This Hero may take 2 Damnation to roll an extra +2 Defense dice.",
+      "cost": 6,
+      "reroll": 4,
+      "defense": 4
+    },
+    {
+      "name": "Ultraviolent Shield",
+      "type": "Permanent",
+      "item": "Shield",
+      "description": "This Hero may take 2 Damnation to roll an extra +2 Defense dice.",
+      "cost": 6,
+      "reroll": 4,
+      "defense": 4
+    },
+    {
+      "name": "Ultraviolent Plate",
+      "type": "Permanent",
+      "item": "Armor",
+      "description": "Limit 1 armor per Hero.",
+      "cost": 8,
+      "defense": 6,
+      "health": 4
+    },
+    {
+      "name": "Ultraviolent Plate",
+      "type": "Permanent",
+      "item": "Armor",
+      "description": "Limit 1 armor per Hero.",
+      "cost": 8,
+      "defense": 6,
+      "health": 4
+    },
+    {
+      "name": "Grand Finale",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "If this Hero dies, all Close Enemies take 2 Wounds each.",
       "cost": 0
+    },
+    {
+      "name": "Twinspell",
+      "type": "Permanent",
+      "item": "Ability",
+      "description": "This Hero may take 2 Damnation before rolling to his Magic attack may target an extra Enemy in Line of Sight.",
+      "cost": 5
+    },
+    {
+      "name": "Last Wind",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "X = Total Wounds, on this Hero",
+      "cost": 0,
+      "reroll": 999
+    },
+    {
+      "name": "Powah Pendant",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "+2 dice on all rolls.",
+      "cost": 7
     }
   ],
   "rewards": [
     {
-      "name": "",
-      "type": "",
-      "strength": 1,
-      "item": "",
-      "description": ""
+      "name": "Piercing Judgement",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Bow",
+      "description": "This rolls +2 dice if the target Hero has any Damnation."
+    },
+    {
+      "name": "Piercing Judgement",
+      "type": "Ranged Attack",
+      "strength": 4,
+      "item": "Bow",
+      "description": "This rolls +2 dice if the target Hero has any Damnation."
+    },
+    {
+      "name": "Swapstone",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "Before any attack, choose 2 enemies within Line of Sight and switch their places."
+    },
+    {
+      "name": "Swapstone",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "Before any attack, choose 2 enemies within Line of Sight and switch their places."
+    },
+    {
+      "name": "Hallowed Flask",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "Allies that enter this Hero's Space may remove all Damnation."
+    },
+    {
+      "name": "Hallowed Flask",
+      "type": "Permanent",
+      "item": "Bling",
+      "description": "Allies that enter this Hero's Space may remove all Damnation."
+    },
+    {
+      "name": "The Finisher",
+      "type": "Melee Attack",
+      "strength": 4,
+      "item": "Sword",
+      "description": "This rolls +1 die for each Wound the target Hero has."
+    },
+    {
+      "name": "The Finisher",
+      "type": "Melee Attack",
+      "strength": 4,
+      "item": "Sword",
+      "description": "This rolls +1 die for each Wound the target Hero has."
+    },
+    {
+      "name": "Collector's Plate",
+      "type": "Permanent",
+      "item": "Armor",
+      "description": "Limit 1 armor per Hero. +2 Defense dice for each Gear this Hero has equipped.",
+      "defense": 2,
+      "health": 2
+    },
+    {
+      "name": "Collector's Plate",
+      "type": "Permanent",
+      "item": "Armor",
+      "description": "Limit 1 armor per Hero. +2 Defense dice for each Gear this Hero has equipped.",
+      "defense": 2,
+      "health": 2
+    },
+    {
+      "name": "Rock Bottom Helm",
+      "type": "Permanent",
+      "item": "Gear",
+      "description": "Once per activation, activate a Minion of any type in Line of Sight, performing only its Movement.",
+      "defense": 2,
+      "reroll": 2
     }
   ]
 }

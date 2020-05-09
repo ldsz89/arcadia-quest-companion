@@ -1,7 +1,9 @@
 <template>
   <v-app id="app">
     <v-app-bar app>
-      <v-toolbar-title>Arcadia Quest Companion</v-toolbar-title>
+      <router-link to="/" id="home">
+        <v-toolbar-title>Arcadia Quest Companion</v-toolbar-title>
+      </router-link>
       <v-spacer />
       <div id="nav">
         <router-link to="/">
@@ -39,6 +41,11 @@
   color: #2c3e50;
 }
 
+#home {
+  color: black;
+  text-decoration: none;
+}
+
 #nav {
   padding: 30px;
 
@@ -53,6 +60,7 @@
 }
 
 #content {
+  height: 100%;
   border: 1em solid #C4C3A7;
   background: rgb(174,51,71);
   background: linear-gradient(90deg, rgba(174,51,71,1) 0%, rgba(99,31,46,1) 50%, rgba(174,51,71,1) 100%);

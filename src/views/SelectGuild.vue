@@ -36,7 +36,12 @@ export default class SelectGuild extends Vue {
     this.$store.commit('setGuildName', name);
   }
 
+  setGuildGold() {
+    this.$store.commit('setGuildGold', 0);
+  }
+
   advance() {
+    this.setGuildGold();
     this.$router.push('select-characters');
   }
 }

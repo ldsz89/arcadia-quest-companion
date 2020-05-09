@@ -1,6 +1,11 @@
 <template>
   <div>
     <v-container>
+      <div class="d-flex">
+        <back-button to="/select-inventory">
+          Select Inventory
+        </back-button>
+      </div>
       <h1 class="guild-name">
         {{ guild.name }}
       </h1>
@@ -37,9 +42,11 @@ import {Component, Vue} from 'vue-property-decorator';
 import {Guild, Equipment, GuildMember} from '@/types';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
+import BackButton from '@/components/BackButton.vue';
 
 @Component({
   components: {
+    BackButton,
     CharacterCard,
     EquipmentCard,
   },

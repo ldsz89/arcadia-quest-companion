@@ -5,6 +5,8 @@ import {Guild, GuildMember, Character} from '../types';
 const guild: Guild = {
   name: '',
   guildMembers: [],
+  gold: 0,
+};
 };
 
 Vue.use(Vuex);
@@ -51,8 +53,12 @@ export default new Vuex.Store({
         }
       }
     },
+    setGuildGold(state, gold: number) {
+      state.guild.gold = gold;
+    },
   },
   actions: {
   },
+  actions: {},
   modules: {},
 });

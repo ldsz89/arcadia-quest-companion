@@ -1,30 +1,15 @@
 <template>
   <v-app id="app">
-    <v-app-bar app>
-      <router-link to="/" id="home">
+    <v-app-bar
+      app
+      flat
+    >
+      <router-link
+        id="home"
+        to="/"
+      >
         <v-toolbar-title>Arcadia Quest Companion</v-toolbar-title>
       </router-link>
-      <v-spacer />
-      <div id="nav">
-        <router-link to="/">
-          Home
-        </router-link> |
-        <router-link to="/select-guild">
-          Select Guild
-        </router-link> |
-        <router-link to="/select-characters">
-          Select Character
-        </router-link> |
-        <router-link to="/select-inventory">
-          Select Inventory
-        </router-link> |
-        <router-link to="/guild-sheet">
-          Guild Sheet
-        </router-link> |
-        <router-link to="/about">
-          About
-        </router-link>
-      </div>
     </v-app-bar>
     <v-content>
       <router-view id="content" />
@@ -39,6 +24,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+header.v-sheet {
+  background-color: #C4C3A7 !important;
 }
 
 #home {

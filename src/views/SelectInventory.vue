@@ -1,6 +1,9 @@
 <template>
   <div>
     <v-container>
+      <div class="d-flex">
+        <back-button to="/select-characters" />
+      </div>
       <h1 class="guild-name">
         {{ guild.name }}
       </h1>
@@ -98,6 +101,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import {Equipment, Guild, GuildMember, EquipmentJSON} from '@/types';
 import equipmentJSON from '@/data/equipment.json';
+import BackButton from '@/components/BackButton.vue';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
 import EquipmentMenu from '@/components/EquipmentMenu.vue';
@@ -125,6 +129,7 @@ interface EquipmentJSONData {
 
 @Component({
   components: {
+    BackButton,
     CharacterCard,
     EquipmentCard,
     EquipmentMenu,

@@ -1,6 +1,9 @@
 <template>
   <div>
     <v-container>
+      <div class="d-flex">
+        <back-button to="/select-guild" />
+      </div>
       <h1 class="guild-name">
         {{ guild.name }}
       </h1>
@@ -43,11 +46,13 @@
 import {Component, Vue} from 'vue-property-decorator';
 import CharacterCard from '@/components/CharacterCard.vue';
 import BottomBanner from '@/components/BottomBanner.vue';
+import BackButton from '@/components/BackButton.vue';
 import charactersData from '@/data/characters.json';
 import {Character, Guild, GuildMember, CharacterJSON} from '../types';
 
 @Component({
   components: {
+    BackButton,
     CharacterCard,
     BottomBanner,
   },

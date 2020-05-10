@@ -9,6 +9,21 @@
       <h1 class="guild-name">
         {{ guild.name }}
       </h1>
+      <div class="d-flex align-center justify-center">
+        <v-btn
+          icon
+          @click="decrementGold()"
+        >
+          <v-icon>mdi-minus</v-icon>
+        </v-btn>
+        <v-icon>mdi-checkbox-blank-circle</v-icon> - {{ guild.gold }}
+        <v-btn
+          icon
+          @click="incrementGold()"
+        >
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </div>
       <v-row>
         <v-col
           v-for="(guildMember, i) in guild.guildMembers"
@@ -55,6 +70,7 @@ export default class GuildSheet extends Vue {
   guild: Guild = {
     name: '',
     guildMembers: [],
+    gold: 0,
   };
 
   mounted() {
@@ -63,6 +79,14 @@ export default class GuildSheet extends Vue {
 
   initializeGuild() {
     this.guild = this.$store.state.guild;
+  }
+
+  incrementGold() {
+    this.$store.commit('setGuildGold', ++this.guild.gold);
+  }
+
+  decrementGold() {
+    this.$store.commit('setGuildGold', --this.guild.gold);
   }
 
   toggleEquipmentExhaustion(guildMember: GuildMember, equipment: Equipment) {

@@ -12,11 +12,25 @@
       <div class="d-flex align-center justify-center">
         <v-btn
           icon
+          :disabled="disableDecrement()"
           @click="decrementGold()"
         >
           <v-icon>mdi-minus</v-icon>
         </v-btn>
-        <v-icon>mdi-checkbox-blank-circle</v-icon> - {{ guild.gold }}
+        <v-badge
+          :content="guild.gold"
+          overlap
+          color="#ae3347"
+        >
+          <v-img
+            src="../assets/gold.svg"
+            width="50"
+          />
+          <!-- <img
+            id="gold"
+            src="../assets/gold.svg"
+          > -->
+        </v-badge>
         <v-btn
           icon
           @click="incrementGold()"
@@ -89,9 +103,19 @@ export default class GuildSheet extends Vue {
     this.$store.commit('setGuildGold', --this.guild.gold);
   }
 
+  disableDecrement() {
+    return this.guild.gold === 0;
+  }
+
   toggleEquipmentExhaustion(guildMember: GuildMember, equipment: Equipment) {
     equipment.exhausted = !equipment.exhausted;
     this.$store.commit('setGuildMemberEquipment', guildMember);
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#gold {
+  width: 5em;
+}
+</style>

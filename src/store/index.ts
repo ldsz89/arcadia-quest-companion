@@ -21,7 +21,27 @@ guild = {
       'picture': 'Kisha.png',
       'exhausted': false,
     },
-    'equipment': [],
+    'equipment': [
+      {
+        'name': 'Uberblade',
+        'type': 'Melee Attack',
+        'strength': 6,
+        'item': 'Sword',
+        'cost': 7,
+        'defense': 3,
+        'exhausted': false,
+      },
+      {
+        'name': 'Ultraviolent Shield',
+        'type': 'Permanent',
+        'item': 'Shield',
+        'description': 'This Hero may take 2 Damnation to roll an extra +2 Defense dice.',
+        'cost': 6,
+        'reroll': 4,
+        'defense': 4,
+        'exhausted': false,
+      },
+    ],
   }, {
     'character': {
       'name': 'Cassius',
@@ -94,8 +114,6 @@ export default new Vuex.Store({
     setGuildGold(state, gold: number) {
       state.guild.gold = gold;
     },
-  },
-  actions: {
   },
   actions: {},
   modules: {},

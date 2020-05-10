@@ -7,7 +7,6 @@ const guild: Guild = {
   guildMembers: [],
   gold: 0,
 };
-};
 
 Vue.use(Vuex);
 

@@ -2,10 +2,49 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import {Guild, GuildMember, Character} from '../types';
 
-const guild: Guild = {
+let guild: Guild = {
   name: '',
   guildMembers: [],
   gold: 0,
+};
+
+guild = {
+  'name': 'Shark',
+  'gold': 0,
+  'guildMembers': [{
+    'character': {
+      'name': 'Kisha',
+      'health': 3,
+      'defense': 3,
+      'abilityName': 'Lucky Shot',
+      'abilityDescription': '+1 Reroll for every equipped non-Magic Ranged attack card.',
+      'picture': 'Kisha.png',
+      'exhausted': false,
+    },
+    'equipment': [],
+  }, {
+    'character': {
+      'name': 'Cassius',
+      'health': 4,
+      'defense': 1,
+      'abilityName': 'Foe on a Stick',
+      'abilityDescription': 'When attacking with a Lance or Exotic attack card, the target does not roll Defense dice.',
+      'picture': 'Cassius.png',
+      'exhausted': false,
+    },
+    'equipment': [],
+  }, {
+    'character': {
+      'name': 'Phyx',
+      'health': 4,
+      'defense': 1,
+      'abilityName': 'Secret of the Blade',
+      'abilityDescription': 'When attacking with a Sword attack card, each crit deals one additional Hit.',
+      'picture': 'Phyx.png',
+      'exhausted': false,
+    },
+    'equipment': [],
+  }],
 };
 
 Vue.use(Vuex);

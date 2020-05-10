@@ -7,8 +7,24 @@
           v-text="character.name"
         />
         <v-card-subtitle>
-          <v-icon>mdi-security</v-icon> - {{ character.defense }}
-          <v-icon>mdi-heart</v-icon> - {{ character.health }}
+          <v-badge
+            :content="character.defense"
+            color="rgba(0, 0, 0, 0.5)"
+            overlap
+            bottom
+            left
+          >
+            <v-icon>mdi-security</v-icon>
+          </v-badge>
+          <v-badge
+            :content="character.health"
+            color="rgba(0, 0, 0, 0.5)"
+            overlap
+            bottom
+            left
+          >
+            <v-icon>mdi-heart</v-icon>
+          </v-badge>
           <p>{{ character.abilityName }}</p>
           <p>{{ character.abilityDescription }}</p>
         </v-card-subtitle>
@@ -45,6 +61,14 @@ div.v-card {
 
   &.selected {
     border: 1em solid #A83346;
+  }
+
+  .v-icon {
+    font-size: 3em;
+
+    &.mdi-heart {
+      color: red;
+    }
   }
 }
 </style>

@@ -23,7 +23,21 @@
           :class="equipmentGradientClass(equipment.type)"
           class="equipment-description"
         >
-          {{ equipment.description }}
+          <div class="d-flex justify-space-around">
+            <defense-badge
+              v-if="equipment.defense"
+              :defense="equipment.defense"
+            />
+            <health-badge
+              v-if="equipment.health"
+              :health="equipment.health"
+            />
+            <reroll-badge
+              v-if="equipment.reroll"
+              :reroll="equipment.reroll"
+            />
+          </div>
+          <p>{{ equipment.description }}</p>
         </div>
       </div>
     </div>
@@ -33,8 +47,17 @@
 <script lang="ts">
 import {Component, Vue, Prop} from 'vue-property-decorator';
 import {Equipment} from '../types';
+import DefenseBadge from '@/components/DefenseBadge.vue';
+import HealthBadge from '@/components/HealthBadge.vue';
+import RerollBadge from '@/components/RerollBadge.vue';
 
-@Component
+@Component({
+  components: {
+    DefenseBadge,
+    HealthBadge,
+    RerollBadge,
+  },
+})
 export default class EquipmentCard extends Vue {
   @Prop() equipment?: Equipment;
 
@@ -140,7 +163,12 @@ $accent: #CEC6B2;
   border-style: none solid solid solid;
   height: 10em;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+
+  &.d-flex {
+    width: 100%;
+  }
 }
 </style>

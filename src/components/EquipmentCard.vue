@@ -179,9 +179,5 @@ $accent: #CEC6B2;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-
-  &.d-flex {
-    width: 100%;
-  }
 }
 </style>

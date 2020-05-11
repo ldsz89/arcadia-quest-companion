@@ -21,7 +21,7 @@ export default class DefenseBadge extends Vue {
 
 <style lang="scss" scoped>
 .v-badge {
-  margin-bottom: 1em;
+  margin: 0 .2em 1em .2em;
 
   .v-icon {
     font-size: 3em;

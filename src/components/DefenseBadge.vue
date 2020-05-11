@@ -6,7 +6,10 @@
     bottom
     left
   >
-    <v-icon>mdi-shield</v-icon>
+    <v-img
+      src="../assets/defense.png"
+      width="2.5em"
+    />
   </v-badge>
 </template>
 
@@ -22,13 +25,5 @@ export default class DefenseBadge extends Vue {
 <style lang="scss" scoped>
 .v-badge {
   margin: 0 .2em 1em .2em;
-
-  .v-icon {
-    font-size: 3em;
-    color: black;
-    background-color: white;
-    border-radius: 17px;
-    padding: 2px;
-  }
 }
 </style>

@@ -14,7 +14,16 @@
           class="equipment-type-strength d-flex justify-space-between"
         >
           <span>{{ equipment.type }}</span>
-          <span>{{ equipment.strength }}</span>
+          <span>
+            <melee-attack-badge
+              v-if="equipment.type === 'Melee Attack'"
+              :attack="equipment.strength"
+            />
+            <ranged-attack-badge
+              v-else-if="equipment.type === 'Ranged Attack'"
+              :attack="equipment.strength"
+            />
+          </span>
         </div>
         <div class="equipment-item">
           {{ equipment.item }}
@@ -50,12 +59,16 @@ import {Equipment} from '../types';
 import DefenseBadge from '@/components/DefenseBadge.vue';
 import HealthBadge from '@/components/HealthBadge.vue';
 import RerollBadge from '@/components/RerollBadge.vue';
+import MeleeAttackBadge from '@/components/MeleeAttackBadge.vue';
+import RangedAttackBadge from '@/components/RangedAttackBadge.vue';
 
 @Component({
   components: {
     DefenseBadge,
     HealthBadge,
     RerollBadge,
+    MeleeAttackBadge,
+    RangedAttackBadge,
   },
 })
 export default class EquipmentCard extends Vue {

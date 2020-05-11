@@ -24,7 +24,7 @@ export default class HealthBadge extends Vue {
   margin: 0 .2em 1em .2em;
 
   .v-icon {
-    font-size: 3em;
+    font-size: 2.3em;
     color: red;
     background-color: rgba(108,145,172,1);
     border-radius: 17px;

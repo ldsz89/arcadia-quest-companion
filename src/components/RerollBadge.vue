@@ -30,7 +30,7 @@ export default class RerollBadge extends Vue {
   margin: 0 .2em 1em .2em;
 
   .v-icon {
-    font-size: 3em;
+    font-size: 2.3em;
     color: #9bb64e;
     background-color: white;
     border-radius: 17px;

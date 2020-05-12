@@ -1,5 +1,9 @@
 <template>
   <v-card :class="{selected: selected}">
+    <div
+      v-if="character.exhausted"
+      class="exhausted"
+    />
     <div class="card">
       <div>
         <v-card-title
@@ -45,6 +49,15 @@ export default class CharacterCard extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.exhausted {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
 div.v-card {
   // height: 15em;
   height: 19em;

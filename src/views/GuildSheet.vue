@@ -26,10 +26,6 @@
             src="../assets/gold.svg"
             width="50"
           />
-          <!-- <img
-            id="gold"
-            src="../assets/gold.svg"
-          > -->
         </v-badge>
         <v-btn
           icon
@@ -47,7 +43,10 @@
           sm="6"
           xs="12"
         >
-          <character-card :character="guildMember.character" />
+          <character-card
+            :character="guildMember.character"
+            @click.native="toggleCharacterExhaustion(guildMember)"
+          />
           <v-row>
             <v-col
               v-for="(equipment, j) in guildMember.equipment"
@@ -105,6 +104,11 @@ export default class GuildSheet extends Vue {
 
   disableDecrement() {
     return this.guild.gold === 0;
+  }
+
+  toggleCharacterExhaustion(guildMember: GuildMember) {
+    guildMember.character.exhausted = !guildMember.character.exhausted;
+    this.$store.commit('setGuildMemberExhaustion', guildMember);
   }
 
   toggleEquipmentExhaustion(guildMember: GuildMember, equipment: Equipment) {

@@ -104,6 +104,13 @@ export default new Vuex.Store({
     clearGuildMembers(state) {
       state.guild.guildMembers = [];
     },
+    setGuildMemberExhaustion(state, guildMember: GuildMember) {
+      for (const member of state.guild.guildMembers) {
+        if (member.character.name === guildMember.character.name) {
+          member.character.exhausted = guildMember.character.exhausted;
+        }
+      }
+    },
     setGuildMemberEquipment(state, guildMember: GuildMember) {
       for (const member of state.guild.guildMembers) {
         if (member.character === guildMember.character) {

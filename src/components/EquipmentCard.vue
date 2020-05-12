@@ -3,6 +3,7 @@
     <div
       v-if="equipment.exhausted"
       class="exhausted"
+      :class="exhaustionClass()"
     />
     <div class="equipment-card">
       <v-card-title class="equipment-title">
@@ -72,7 +73,29 @@ import RangedAttackBadge from '@/components/RangedAttackBadge.vue';
   },
 })
 export default class EquipmentCard extends Vue {
-  @Prop() equipment?: Equipment;
+  @Prop() equipment!: Equipment;
+  @Prop() guildSeal!: string;
+
+  exhaustionClass() {
+    switch (this.guildSeal) {
+    case 'Tiger.png':
+      return {
+        'tiger': true,
+      };
+    case 'Crow.png':
+      return {
+        'crow': true,
+      };
+    case 'Shark.png':
+      return {
+        'shark': true,
+      };
+    case 'Snake.png':
+      return {
+        'snake': true,
+      };
+    }
+  }
 
   equipmentSolidClass(type: string) {
     if (type === 'Boost') {
@@ -121,6 +144,31 @@ $accent: #CEC6B2;
   bottom: 0;
   right: 0;
   background-color: rgba(0,0,0,0.5);
+  z-index: 4;
+
+  &.tiger {
+    background-image: url("../assets/Tiger.png");
+    background-position: center center;
+    background-size: 60%;
+  }
+
+  &.crow {
+    background-image: url("../assets/Crow.png");
+    background-position: center center;
+    background-size: 60%;
+  }
+
+  &.shark {
+    background-image: url("../assets/Shark.png");
+    background-position: center center;
+    background-size: 60%;
+  }
+
+  &.snake {
+    background-image: url("../assets/Snake.png");
+    background-position: center center;
+    background-size: 60%;
+  }
 }
 
 .attack-solid {

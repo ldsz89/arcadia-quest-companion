@@ -3,6 +3,7 @@
     <div
       v-if="character.exhausted"
       class="exhausted"
+      :class="exhaustionClass()"
     />
     <div class="card">
       <div>
@@ -45,6 +46,28 @@ import HealthBadge from '@/components/HealthBadge.vue';
 export default class CharacterCard extends Vue {
   @Prop() character!: Character;
   @Prop() selected!: boolean;
+  @Prop() guildSeal!: string;
+
+  exhaustionClass() {
+    switch (this.guildSeal) {
+    case 'Tiger.png':
+      return {
+        'tiger': true,
+      };
+    case 'Crow.png':
+      return {
+        'crow': true,
+      };
+    case 'Shark.png':
+      return {
+        'shark': true,
+      };
+    case 'Snake.png':
+      return {
+        'snake': true,
+      };
+    }
+  }
 }
 </script>
 
@@ -56,6 +79,31 @@ export default class CharacterCard extends Vue {
   bottom: 0;
   right: 0;
   background-color: rgba(0,0,0,0.5);
+  z-index: 4;
+
+  &.tiger {
+    background-image: url("../assets/Tiger.png");
+    background-position: center center;
+    background-size: 40%;
+  }
+
+  &.crow {
+    background-image: url("../assets/Crow.png");
+    background-position: center center;
+    background-size: 40%;
+  }
+
+  &.shark {
+    background-image: url("../assets/Shark.png");
+    background-position: center center;
+    background-size: 40%;
+  }
+
+  &.snake {
+    background-image: url("../assets/Snake.png");
+    background-position: center center;
+    background-size: 40%;
+  }
 }
 
 div.v-card {

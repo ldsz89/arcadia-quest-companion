@@ -62,6 +62,7 @@ export default class SelectCharcters extends Vue {
     name: '',
     guildMembers: [],
     gold: 0,
+    guildSeal: '',
   };
   characterJSON = charactersData;
   characters: Character[] = [];

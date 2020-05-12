@@ -48,6 +48,7 @@ export interface Guild {
   name: string;
   guildMembers: GuildMember[];
   gold: number;
+  guildSeal: string;
 }
 
 export interface DeathCurse {

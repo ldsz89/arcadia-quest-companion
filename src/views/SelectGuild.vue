@@ -40,8 +40,21 @@ export default class SelectGuild extends Vue {
     this.$store.commit('setGuildGold', 0);
   }
 
+  setGuildSeal() {
+    if (this.guildName === 'Tiger') {
+      this.$store.commit('setGuildSeal', 'Tiger.png');
+    } else if (this.guildName === 'Crow') {
+      this.$store.commit('setGuildSeal', 'Crow.png');
+    } else if (this.guildName === 'Shark') {
+      this.$store.commit('setGuildSeal', 'Shark.png');
+    } else if (this.guildName === 'Snake') {
+      this.$store.commit('setGuildSeal', 'Snake.png');
+    }
+  }
+
   advance() {
     this.setGuildGold();
+    this.setGuildSeal();
     this.$router.push('select-characters');
   }
 }

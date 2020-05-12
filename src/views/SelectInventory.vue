@@ -141,6 +141,7 @@ export default class SelectInventory extends Vue {
     name: '',
     guildMembers: [],
     gold: 0,
+    guildSeal: '',
   };
   equipmentJSON: EquipmentJSONData = equipmentJSON;
   equipment!: EquipmentData;;

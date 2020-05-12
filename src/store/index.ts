@@ -6,11 +6,13 @@ let guild: Guild = {
   name: '',
   guildMembers: [],
   gold: 0,
+  guildSeal: '',
 };
 
 guild = {
   'name': 'Shark',
   'gold': 0,
+  'guildSeal': 'Shark.png',
   'guildMembers': [{
     'character': {
       'name': 'Kisha',
@@ -29,7 +31,7 @@ guild = {
         'item': 'Sword',
         'cost': 7,
         'defense': 3,
-        'exhausted': false,
+        'exhausted': true,
       },
       {
         'name': 'Ultraviolent Shield',
@@ -120,6 +122,9 @@ export default new Vuex.Store({
     },
     setGuildGold(state, gold: number) {
       state.guild.gold = gold;
+    },
+    setGuildSeal(state, guildSeal: string) {
+      state.guild.guildSeal = guildSeal;
     },
   },
   actions: {},

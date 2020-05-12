@@ -45,6 +45,7 @@
         >
           <character-card
             :character="guildMember.character"
+            :guild-seal="guild.guildSeal"
             @click.native="toggleCharacterExhaustion(guildMember)"
           />
           <v-row>
@@ -55,6 +56,7 @@
             >
               <equipment-card
                 :equipment="equipment"
+                :guild-seal="guild.guildSeal"
                 @click.native="toggleEquipmentExhaustion(guildMember, equipment)"
               />
             </v-col>
@@ -84,6 +86,7 @@ export default class GuildSheet extends Vue {
     name: '',
     guildMembers: [],
     gold: 0,
+    guildSeal: '',
   };
 
   mounted() {
@@ -114,6 +117,11 @@ export default class GuildSheet extends Vue {
   toggleEquipmentExhaustion(guildMember: GuildMember, equipment: Equipment) {
     equipment.exhausted = !equipment.exhausted;
     this.$store.commit('setGuildMemberEquipment', guildMember);
+  }
+
+  getGuildSeal() {
+    const images = require.context('../assets/', false);
+    return images('./' + this.guild.guildSeal);
   }
 }
 </script>

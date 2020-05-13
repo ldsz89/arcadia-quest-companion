@@ -49,22 +49,7 @@
             @click.native="toggleCharacterExhaustion(guildMember)"
           />
           <div class="d-flex justify-end">
-            <v-menu>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  fab
-                  icon="true"
-                  v-on="on"
-                >
-                  <v-icon>mdi-plus</v-icon>
-                </v-btn>
-              </template>
-              <v-list>
-                <v-list-item>
-                  <v-list-title>Title</v-list-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
+            <inventory-menu />
           </div>
           <v-row>
             <v-col
@@ -91,12 +76,14 @@ import {Guild, Equipment, GuildMember} from '@/types';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
 import BackButton from '@/components/BackButton.vue';
+import InventoryMenu from '@/components/InventoryMenu.vue';
 
 @Component({
   components: {
     BackButton,
     CharacterCard,
     EquipmentCard,
+    InventoryMenu,
   },
 })
 export default class GuildSheet extends Vue {

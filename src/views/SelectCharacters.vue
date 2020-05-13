@@ -126,7 +126,7 @@ export default class SelectCharcters extends Vue {
 
   advance() {
     if (this.selectedCharacters.length === 3) {
-      this.$router.push('select-inventory');
+      this.$router.push('select-equipment');
     }
   }
 }

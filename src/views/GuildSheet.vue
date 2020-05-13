@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <div class="d-flex">
-        <back-button to="/select-inventory">
+        <back-button to="/select-equipment">
           Select Inventory
         </back-button>
       </div>
@@ -48,6 +48,24 @@
             :guild-seal="guild.guildSeal"
             @click.native="toggleCharacterExhaustion(guildMember)"
           />
+          <div class="d-flex justify-end">
+            <v-menu>
+              <template v-slot:activator="{ on }">
+                <v-btn
+                  fab
+                  icon="true"
+                  v-on="on"
+                >
+                  <v-icon>mdi-plus</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item>
+                  <v-list-title>Title</v-list-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </div>
           <v-row>
             <v-col
               v-for="(equipment, j) in guildMember.equipment"

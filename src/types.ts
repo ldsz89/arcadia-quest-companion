@@ -56,3 +56,9 @@ export interface DeathCurse {
   value: number;
   description: string;
 }
+
+export interface Token {
+  name: string;
+  description: string;
+  picture: string;
+}

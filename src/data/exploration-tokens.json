@@ -1,58 +1,72 @@
 [
   {
     "name": "Healing Potion",
-    "description": "An active Hero may freely discard this token during his turn to recover all his Life, discarding any Wound tokens and Death Curse cards he may possess. This can't be used while an attack is being resolved."
+    "description": "An active Hero may freely discard this token during his turn to recover all his Life, discarding any Wound tokens and Death Curse cards he may possess. This can't be used while an attack is being resolved.",
+    "picture": "healing-potion.png"
   },
   {
     "name": "Refreshing Potion",
-    "description": " An active Hero may freely discard this token during his turn to unexhaust all of his cards, removing all Guild tokens from the cards belonging to that Hero."
+    "description": " An active Hero may freely discard this token during his turn to unexhaust all of his cards, removing all Guild tokens from the cards belonging to that Hero.",
+    "picture": "refreshing-potion.png"
   },
   {
     "name": "Extra Activation Potion",
-    "description": "The Hero may freely discard this token at the end of his activation to immediately perform another full activation. That same Hero is activated again normally."
+    "description": "The Hero may freely discard this token at the end of his activation to immediately perform another full activation. That same Hero is activated again normally.",
+    "picture": "extra-activation-potion.png"
   },
   {
     "name": "Treasure Chest - 1",
-    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it."
+    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it.",
+    "picture": "treasure-chest.png"
   },
   {
     "name": "Treasure Chest - 2",
-    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it."
+    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it.",
+    "picture": "treasure-chest.png"
   },
   {
     "name": "Treasure Chest - 2",
-    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it."
+    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it.",
+    "picture": "treasure-chest.png"
   },
   {
     "name": "Treasure Chest - 2",
-    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it."
+    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it.",
+    "picture": "treasure-chest.png"
   },
   {
     "name": "Treasure Chest - 3",
-    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it."
+    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it.",
+    "picture": "treasure-chest.png"
   },
   {
     "name": "Treasure Chest - 4",
-    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it."
+    "description": "At the end of the Scenario, each Treasure Chest token gives the Coin value listed on it to the Guild that possesses it.",
+    "picture": "treasure-chest.png"
   },
   {
     "name": "Trap",
-    "description": "The Hero who collects it immediately suffers an automatic Wound and the token is discarded."
+    "description": "The Hero who collects it immediately suffers an automatic Wound and the token is discarded.",
+    "picture": "trap.png"
   },
   {
     "name": "Tiger",
-    "description": "Quest"
+    "description": "Quest",
+    "picture": "tiger-quest-token.png"
   },
   {
     "name": "Shark",
-    "description": "Quest"
+    "description": "Quest",
+    "picture": "shark-quest-token.png"
   },
   {
     "name": "Crow",
-    "description": "Quest"
+    "description": "Quest",
+    "picture": "crow-quest-token.png"
   },
   {
     "name": "Snake",
-    "description": "Quest"
+    "description": "Quest",
+    "picture": "snake-quest-token.png"
   }
 ]

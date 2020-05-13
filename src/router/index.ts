@@ -3,7 +3,7 @@ import VueRouter, {RouteConfig} from 'vue-router';
 import Home from '../views/Home.vue';
 import SelectGuild from '@/views/SelectGuild.vue';
 import SelectCharacters from '@/views/SelectCharacters.vue';
-import SelectInventory from '@/views/SelectInventory.vue';
+import SelectEquipment from '@/views/SelectEquipment.vue';
 import GuildSheet from '@/views/GuildSheet.vue';
 
 Vue.use(VueRouter);
@@ -25,9 +25,9 @@ const routes: Array<RouteConfig> = [
     component: SelectCharacters,
   },
   {
-    path: '/select-inventory',
-    name: 'Select Inventory',
-    component: SelectInventory,
+    path: '/select-equipment',
+    name: 'Select Equipment',
+    component: SelectEquipment,
   },
   {
     path: '/guild-sheet',

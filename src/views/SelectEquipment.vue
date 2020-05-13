@@ -136,7 +136,7 @@ interface EquipmentJSONData {
     BottomBanner,
   },
 })
-export default class SelectInventory extends Vue {
+export default class SelectEquipment extends Vue {
   guild: Guild = {
     name: '',
     guildMembers: [],

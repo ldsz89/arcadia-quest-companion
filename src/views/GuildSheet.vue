@@ -48,8 +48,18 @@
             :guild-seal="guild.guildSeal"
             @click.native="toggleCharacterExhaustion(guildMember)"
           />
-          <div class="d-flex justify-end">
-            <inventory-menu />
+          <wound-tracker
+            :guild-member="guildMember"
+          />
+          <div class="d-flex justify-space-between">
+            <inventory-display
+              :guild-member="guildMember"
+              :remove="removeGuildMemberInventoryItem"
+            />
+            <inventory-menu
+              :guild-member="guildMember"
+              :add="addGuildMemberInventoryItem"
+            />
           </div>
           <v-row>
             <v-col
@@ -72,11 +82,13 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {Guild, Equipment, GuildMember} from '@/types';
+import {Guild, Equipment, GuildMember, Token} from '@/types';
 import CharacterCard from '@/components/CharacterCard.vue';
 import EquipmentCard from '@/components/EquipmentCard.vue';
 import BackButton from '@/components/BackButton.vue';
 import InventoryMenu from '@/components/InventoryMenu.vue';
+import InventoryDisplay from '@/components/InventoryDisplay.vue';
+import WoundTracker from '@/components/WoundTracker.vue';
 
 @Component({
   components: {
@@ -84,6 +96,8 @@ import InventoryMenu from '@/components/InventoryMenu.vue';
     CharacterCard,
     EquipmentCard,
     InventoryMenu,
+    InventoryDisplay,
+    WoundTracker,
   },
 })
 export default class GuildSheet extends Vue {
@@ -127,6 +141,16 @@ export default class GuildSheet extends Vue {
   getGuildSeal() {
     const images = require.context('../assets/', false);
     return images('./' + this.guild.guildSeal);
+  }
+
+  addGuildMemberInventoryItem(guildMember: GuildMember, token: Token) {
+    guildMember.inventory.push(token);
+    this.$store.commit('setGuildMemberInventory', guildMember);
+  }
+
+  removeGuildMemberInventoryItem(guildMember: GuildMember, token: Token) {
+    guildMember.inventory.splice(guildMember.inventory.indexOf(token), 1);
+    this.$store.commit('setGuildMemberInventory', guildMember);
   }
 }
 </script>

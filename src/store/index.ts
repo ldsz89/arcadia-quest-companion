@@ -139,6 +139,22 @@ export default new Vuex.Store({
         }
       }
     },
+    incrementGuildMemberWounds(state, guildMember: GuildMember) {
+      for (const member of state.guild.guildMembers) {
+        if (member.character === guildMember.character) {
+          member.wounds++;
+        }
+      }
+    },
+    decrementGuildMemberWounds(state, guildMember: GuildMember) {
+      for (const member of state.guild.guildMembers) {
+        if (member.character === guildMember.character) {
+          if (member.wounds > 0) {
+            member.wounds--;
+          }
+        }
+      }
+    },
   },
   actions: {},
   modules: {},

@@ -42,6 +42,8 @@ export interface EquipmentJSON {
 export interface GuildMember {
   character: Character;
   equipment: Equipment[];
+  inventory: Token[];
+  wounds: number;
 }
 
 export interface Guild {

@@ -44,6 +44,8 @@ guild = {
         'exhausted': false,
       },
     ],
+    'inventory': [],
+    'wounds': 2,
   }, {
     'character': {
       'name': 'Cassius',
@@ -55,6 +57,8 @@ guild = {
       'exhausted': false,
     },
     'equipment': [],
+    'inventory': [],
+    'wounds': 2,
   }, {
     'character': {
       'name': 'Phyx',
@@ -66,6 +70,8 @@ guild = {
       'exhausted': false,
     },
     'equipment': [],
+    'inventory': [],
+    'wounds': 2,
   }],
 };
 
@@ -125,6 +131,13 @@ export default new Vuex.Store({
     },
     setGuildSeal(state, guildSeal: string) {
       state.guild.guildSeal = guildSeal;
+    },
+    setGuildMemberInventory(state, guildMember: GuildMember) {
+      for (const member of state.guild.guildMembers) {
+        if (member.character === guildMember.character) {
+          member.inventory = guildMember.inventory;
+        }
+      }
     },
   },
   actions: {},

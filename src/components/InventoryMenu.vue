@@ -13,6 +13,7 @@
       <v-list-item
         v-for="(token, i) in inventoryMenuItems"
         :key="token + i"
+        @click="add(guildMember, token)"
       >
         <v-list-title>{{ token.name }}</v-list-title>
       </v-list-item>
@@ -21,12 +22,15 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import {Component, Vue, Prop} from 'vue-property-decorator';
 import ExplorationTokenData from '@/data/exploration-tokens.json';
-import {Token} from '@/types';
+import {Token, GuildMember} from '@/types';
 
 @Component
 export default class InventoryMenu extends Vue {
+  @Prop() guildMember!: GuildMember;
+  @Prop() add!: any;
+
   inventoryMenuItems: Token[] = ExplorationTokenData;
 }
 </script>

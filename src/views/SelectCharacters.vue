@@ -101,6 +101,8 @@ export default class SelectCharcters extends Vue {
     const guildMember: GuildMember = {
       character,
       equipment: [],
+      inventory: [],
+      wounds: 0,
     };
     if (this.$store.getters.characters.length < 3) {
       this.$store.commit('addGuildMembers', guildMember);
@@ -111,6 +113,8 @@ export default class SelectCharcters extends Vue {
     const guildMember: GuildMember = {
       character,
       equipment: [],
+      inventory: [],
+      wounds: 0,
     };
     this.$store.commit('removeGuildMember', guildMember);
   }

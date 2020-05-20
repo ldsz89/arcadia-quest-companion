@@ -1,0 +1,30 @@
+[
+  {
+    "name": "No Curse",
+    "description": "Nothing happens, discard this card."
+  },
+  {
+    "name": "Damned",
+    "description": "Damnation"
+  },
+  {
+    "name": "Sinful",
+    "description": "Each time this Hero gains any number of Damnation, he gets 1 addition Damnation."
+  },
+  {
+    "name": "System Shock",
+    "description": "Occupies a card slot. No other effect."
+  },
+  {
+    "name": "Severe Nosebleed",
+    "description": "Occupies a card slot. -1 health."
+  },
+  {
+    "name": "Paranoia",
+    "description": "Whenever an Enemy reveals a Brimstone Card, this Hero immediately receives 1 Damnation."
+  },
+  {
+    "name": "Amnesia",
+    "description": "Place on Hero card. This hero loses his natural ability."
+  }
+]

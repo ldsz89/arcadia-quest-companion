@@ -16,7 +16,9 @@
         v-for="(wound, index) in guildMember.wounds"
         :key="guildMember.character.name + '-wound-' + index"
       >
-        <v-icon class="wound">mdi-heart</v-icon>
+        <v-icon class="wound">
+          mdi-heart
+        </v-icon>
       </div>
       <v-btn
         fab

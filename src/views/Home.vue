@@ -25,6 +25,10 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss">
+img {
+  width: 100%;
+}
+
 h1 {
   color: #C4C3A7;
 }

@@ -2,77 +2,11 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import {Guild, GuildMember, Character} from '../types';
 
-let guild: Guild = {
+const guild: Guild = {
   name: '',
   guildMembers: [],
   gold: 0,
   guildSeal: '',
-};
-
-guild = {
-  'name': 'Shark',
-  'gold': 0,
-  'guildSeal': 'Shark.png',
-  'guildMembers': [{
-    'character': {
-      'name': 'Kisha',
-      'health': 3,
-      'defense': 3,
-      'abilityName': 'Lucky Shot',
-      'abilityDescription': '+1 Reroll for every equipped non-Magic Ranged attack card.',
-      'picture': 'Kisha.png',
-      'exhausted': false,
-    },
-    'equipment': [
-      {
-        'name': 'Uberblade',
-        'type': 'Melee Attack',
-        'strength': 6,
-        'item': 'Sword',
-        'cost': 7,
-        'defense': 3,
-        'exhausted': true,
-      },
-      {
-        'name': 'Ultraviolent Shield',
-        'type': 'Permanent',
-        'item': 'Shield',
-        'description': 'This Hero may take 2 Damnation to roll an extra +2 Defense dice.',
-        'cost': 6,
-        'reroll': 4,
-        'defense': 4,
-        'exhausted': false,
-      },
-    ],
-    'inventory': [],
-    'wounds': 2,
-  }, {
-    'character': {
-      'name': 'Cassius',
-      'health': 4,
-      'defense': 1,
-      'abilityName': 'Foe on a Stick',
-      'abilityDescription': 'When attacking with a Lance or Exotic attack card, the target does not roll Defense dice.',
-      'picture': 'Cassius.png',
-      'exhausted': false,
-    },
-    'equipment': [],
-    'inventory': [],
-    'wounds': 2,
-  }, {
-    'character': {
-      'name': 'Phyx',
-      'health': 4,
-      'defense': 1,
-      'abilityName': 'Secret of the Blade',
-      'abilityDescription': 'When attacking with a Sword attack card, each crit deals one additional Hit.',
-      'picture': 'Phyx.png',
-      'exhausted': false,
-    },
-    'equipment': [],
-    'inventory': [],
-    'wounds': 2,
-  }],
 };
 
 Vue.use(Vuex);

@@ -2,7 +2,8 @@
 node_modules
 /dist
 /coverage
-.firebase
+/.firebase
+*.cache
 
 # local env files
 .env.local
@@ -23,4 +24,3 @@ firebase-debug.log
 *.sln
 *.sw?
 *.xcf
-*.cache

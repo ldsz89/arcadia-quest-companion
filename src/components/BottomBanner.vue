@@ -6,7 +6,7 @@
     <template v-slot:actions>
       <v-btn
         text
-        color="primary"
+        color="#C4C3A7"
         :disabled="disabled"
         @click="advance()"
       >
